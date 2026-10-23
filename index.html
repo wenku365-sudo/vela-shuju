@@ -126,6 +126,104 @@
     .footer { color:var(--muted); font-size:12px; display:flex; justify-content:space-between; gap:14px; border-top:1px solid var(--line-soft); padding:14px 0 28px; margin-top:14px; }
     @media (max-width:1060px) { .hero-grid, .rank-grid, .action-band { grid-template-columns:1fr; } .kpi-strip, .validation-grid, .tag-cloud { grid-template-columns:repeat(2,minmax(0,1fr)); } .hero-chips { justify-content:flex-start; } }
     @media (max-width:680px) { .page { width:min(100% - 18px, 1360px); } h1 { font-size:clamp(30px,10vw,48px); } .hero-copy { font-size:14px; } .kpi-strip, .validation-grid, .insight-grid, .tag-cloud { grid-template-columns:1fr; } .hero-main, .metric, .insight, .rank-panel, .count-card, .action-band { padding:12px; } .toolbar { align-items:stretch; } .segmented, .search { width:100%; } .bar-row { grid-template-columns:minmax(72px,104px) 1fr 42px; } .footer { display:grid; } }
+    [hidden] { display:none !important; }
+html { scroll-padding-top:20px; }
+button,select,input { font:inherit; }
+button,a,select,input { -webkit-tap-highlight-color:transparent; }
+button { cursor:pointer; }
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible { outline:2px solid #91b9ff;outline-offset:4px; }
+.section-note { color:var(--muted);margin-top:6px; }
+.account-summary { display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin:18px 0;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden; }
+.account-summary>div { background:var(--panel);padding:16px 20px; }
+.account-summary span,.drawer-summary span,.drawer-breakdown span { display:block;color:var(--muted);font-size:12px;margin-bottom:8px; }
+.account-summary strong { font-size:28px;letter-spacing:-.03em;font-variant-numeric:tabular-nums; }
+.account-controls { display:flex;gap:12px;flex-wrap:wrap;align-items:end; }
+.control { display:grid;gap:7px;color:var(--muted);font-size:12px; }
+.control select,.control input { height:42px;border:1px solid var(--line);border-radius:8px;background:#0b1018;color:var(--text);padding:0 12px;min-width:170px; }
+.control-search { flex:1;min-width:220px; }
+.control-search input { width:100%; }
+.control select { max-width:100%; }
+.account-filter-row { display:flex;justify-content:space-between;gap:12px;align-items:center;margin:16px 0;flex-wrap:wrap; }
+.account-tabs { display:flex;gap:6px;flex-wrap:wrap; }
+.account-tabs button,.ghost-button,.expand-button { border:1px solid var(--line);border-radius:8px;background:#0e151e;color:var(--soft);padding:10px 14px;font-size:13px; }
+.account-tabs button[aria-pressed=true] { background:rgba(79,140,255,.15);border-color:var(--accent);color:#e8f0ff; }
+.scope-row { display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0;color:var(--muted);font-size:13px;line-height:1.6;flex-wrap:wrap; }
+.scope-row p { margin:0; }
+.account-grid { grid-template-columns:repeat(3,minmax(0,1fr));gap:16px; }
+.account-card { padding:20px;background:linear-gradient(150deg,rgba(79,140,255,.055),transparent 65%),var(--panel);display:flex;flex-direction:column;cursor:pointer;transition:border-color .15s; }
+.account-card:hover,.account-card:focus-within { border-color:#4d6b99; }
+.account-card-head { min-height:28px; }
+.account-owner { margin:8px 0 22px;min-height:18px; }
+.account-primary span { display:block;font-size:12px;color:var(--muted);margin-bottom:7px; }
+.account-primary strong { font-size:40px;letter-spacing:-.04em;line-height:1.15;font-variant-numeric:tabular-nums; }
+.account-secondary { display:flex;gap:5px 16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:10px 0 18px;line-height:1.6; }
+.account-health { margin-top:auto;padding-top:14px;border-top:1px solid var(--line-soft);font-size:12px;color:var(--muted); }
+.has-zero,.warning { color:#efbf7a; }
+.account-open { display:flex;align-items:center;justify-content:space-between;width:100%;border:0;background:transparent;color:#9fc2ff;margin-top:14px;padding:7px 0 0;font-size:13px;text-align:left; }
+.account-open:hover { color:white; }
+.account-open span { font-size:18px; }
+.expand-wrap { text-align:center;margin-top:20px; }
+.empty-state { text-align:center;border:1px dashed var(--line);border-radius:12px;padding:40px 20px;color:var(--muted);line-height:1.7; }
+.empty-state strong { display:block;color:var(--text);font-size:17px; }
+.empty-state p { margin:8px 0 18px; }
+.count-card { text-align:left;color:var(--text);font:inherit;cursor:pointer; }
+.count-card:hover { border-color:var(--accent); }
+.composition { display:flex;height:9px;border-radius:999px;overflow:hidden;background:var(--line);margin:12px 0 18px; }
+.composition i { height:100%; }
+.composition i:nth-child(1) { background:#6298ff; }.composition i:nth-child(2) { background:#9fafff; }.composition i:nth-child(3) { background:#66c9d0; }.composition i:nth-child(4) { background:#c1d5f8; }
+.insight-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.insight strong { font-size:27px;margin:10px 0; }
+.insight em { line-height:1.6;font-weight:500; }
+.insight p { font-size:12px;color:var(--muted);line-height:1.6;margin:8px 0 0; }
+.video-link { display:inline-block;margin-top:6px;font-size:12px;color:#a6c8ff;text-decoration:none; }
+.video-link:hover { text-decoration:underline; }
+.pill-warning { color:#efbf7a;background:rgba(239,191,122,.1); }
+.toolbar .control { flex-shrink:0; }
+.toolbar select { height:36px; }
+.empty { display:block; }
+.action-band { grid-template-columns:128px 1fr auto; }
+.action-band strong { font-size:20px; }
+.action-buttons { display:flex;flex-wrap:wrap;gap:8px; }
+.data-notes { color:var(--muted);font-size:13px;line-height:1.9;padding:18px 0 24px;border-top:1px solid var(--line); }
+.data-notes summary { cursor:pointer;width:fit-content;color:var(--soft); }
+.data-notes ul { padding-left:20px;max-width:1000px; }
+.data-notes p { margin:6px 0; }
+dialog { position:fixed;inset:0 0 0 auto;margin:0;border:0;border-left:1px solid var(--line);padding:0;width:min(660px,100%);height:100dvh;max-width:100%;max-height:100dvh;background:#0e151e;color:var(--text);box-shadow:-20px 0 80px rgba(0,0,0,.4); }
+dialog::backdrop { background:rgba(0,0,0,.65);backdrop-filter:blur(3px); }
+.dialog-open { overflow:hidden; }
+.drawer-frame { height:100%;display:flex;flex-direction:column; }
+.drawer-header { padding:22px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;justify-content:space-between;align-items:flex-start; }
+.drawer-header h2 { font-size:23px;line-height:1.5;overflow-wrap:anywhere; }
+.drawer-header p { color:var(--muted);font-size:12px;line-height:1.7;margin:8px 0 0; }
+.drawer-close { flex-shrink:0;min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:8px;color:var(--soft);background:transparent; }
+.drawer-scroll { flex:1;overflow-y:auto;padding:24px;overscroll-behavior:contain; }
+.drawer-summary,.drawer-breakdown { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px; }
+.drawer-summary strong { font-size:25px;font-variant-numeric:tabular-nums; }
+.drawer-breakdown { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.drawer-breakdown strong { font-size:20px; }
+.drawer-section { padding-top:22px;margin-top:22px;border-top:1px solid var(--line); }
+.drawer-section h3 { font-size:15px;margin:0 0 15px; }
+.drawer-section .note { color:var(--muted);font-size:12px;line-height:1.7; }
+.drawer-owners p { color:var(--muted);font-size:12px;line-height:1.8;overflow-wrap:anywhere; }
+.drawer-owners strong { color:var(--soft); }
+.drawer-work { padding:16px 0;border-top:1px solid var(--line-soft); }
+.drawer-work-meta { display:flex;gap:8px 12px;flex-wrap:wrap;font-size:12px;color:var(--muted); }
+.drawer-work p { line-height:1.8;font-size:14px;overflow-wrap:anywhere; }
+.drawer-work-footer { display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;color:var(--soft);font-size:12px; }
+.drawer-work-footer .video-link { margin:0; }
+.drawer-footer { border-top:1px solid var(--line);padding:16px 24px;background:#101925; }
+.drawer-footer button { width:100%; }
+.no-script { border:1px solid #efbf7a;padding:16px;color:#efbf7a; }
+@media(min-width:681px) and (max-width:1060px) { .account-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.action-band {grid-template-columns:1fr;}.insight-grid {grid-template-columns:repeat(3,minmax(0,1fr));} }
+@media(max-width:680px) {
+ .account-grid {grid-template-columns:1fr;gap:12px;}.account-card {padding:18px;}.account-primary strong {font-size:36px;}
+ .account-summary {grid-template-columns:repeat(2,minmax(0,1fr));}.account-summary>div {padding:14px;}.account-summary strong {font-size:25px;}
+ .account-controls {display:grid;grid-template-columns:1fr 1fr;width:100%;}.control-search {grid-column:1/-1;min-width:0;grid-row:1;}.control select,.control input {min-width:0;width:100%;font-size:16px;}
+ .account-tabs {width:100%;}.account-tabs button {padding:10px;font-size:12px;flex:1;}.account-filter-row {gap:10px;}.insight-grid {grid-template-columns:1fr;}
+ .action-band {grid-template-columns:1fr;}.toolbar .control {width:100%;}.drawer-header {padding:16px;}.drawer-header h2 {font-size:20px;}.drawer-scroll {padding:18px;}.drawer-footer {padding:14px 18px;}.drawer-summary {gap:8px;}.drawer-summary strong {font-size:23px;}
+ .composition {height:8px;}.kpi-strip {grid-template-columns:repeat(2,minmax(0,1fr));}.validation-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+
   </style>
 </head>
 <body>
@@ -149,31 +247,30 @@
               <div class="mini"><strong>31.9</strong><span>平均互动</span></div>
               <div class="mini"><strong>8</strong><span>中位数</span></div>
               <div class="mini"><strong>15.4%</strong><span>零互动率</span></div>
-              <div class="mini"><strong>15.4%</strong><span>未过审率</span></div>
+              <div class="mini"><strong>6</strong><span>零互动作品</span></div>
             </div>
           </div>
         </section>
         <aside class="hero-side">
           <div class="validation">
-            <div class="title"><h2>接口校验</h2><span class="chip accent">Direct Pull</span></div>
+            <div class="title"><h2>互动构成</h2></div>
+            <div class="composition" aria-label="互动占比"><i style="width:45.2%"></i><i style="width:14.2%"></i><i style="width:11.6%"></i><i style="width:29.0%"></i></div>
             <div class="validation-grid">
               <div class="panel metric"><span class="label">点赞</span><strong>562</strong><small>占比 45.2%</small></div>
-              <div class="panel metric"><span class="label">收藏</span><strong>361</strong><small>P75 23</small></div>
-              <div class="panel metric"><span class="label">分享</span><strong>144</strong><small>Top 作品 69</small></div>
-              <div class="panel metric"><span class="label">评论</span><strong>177</strong><small>P90 37</small></div>
+              <div class="panel metric"><span class="label">收藏</span><strong>361</strong><small>占比 29.0%</small></div>
+              <div class="panel metric"><span class="label">分享</span><strong>144</strong><small>占比 11.6%</small></div>
+              <div class="panel metric"><span class="label">评论</span><strong>177</strong><small>占比 14.2%</small></div>
             </div>
           </div>
         </aside>
       </div>
     </section>
     <section class="section" aria-labelledby="insights-title">
-      <div class="section-head"><div><h2 id="insights-title">关键洞察</h2><p class="section-note">优先看高互动账号、负责人分布和高频标签，帮助快速定位当天内容表现。</p></div></div>
+      <div class="section-head"><div><h2 id="insights-title">关键洞察</h2><p class="section-note">聚焦互动集中度和零互动分布，快速确定复盘范围。</p></div></div>
       <div class="insight-grid">
-        <article class="insight"><span>最佳时段</span><strong>10:00 </strong><em>4 作品 / 574 互动</em></article>
-        <article class="insight"><span>最佳负责人</span><strong>非凡 </strong><em>774 互动 | 2 个账号</em></article>
-        <article class="insight"><span>最佳账号</span><strong>贤哥来了 </strong><em>549 互动</em></article>
-        <article class="insight"><span>Top20 占比</span><strong>95.8%</strong><em>Top20 贡献 1192 互动</em></article>
-        <article class="insight"><span>未过审</span><strong>6</strong><em>15.4% | 赞评转藏同时为 0</em></article>
+        <article class="insight"><span>前两个账号互动贡献</span><strong>62.2%</strong><em>774 次互动 · 建议优先复盘其作品</em><p>按当前采集快照计算，不代表长期表现。</p></article>
+        <article class="insight"><span>有零互动作品的账号</span><strong>6 / 34</strong><em>涉及 6 个作品 · 其中 4 个账号的作品全部零互动</em><p>互动为零需结合发布时间和内容状态人工排查。</p></article>
+        <article class="insight"><span>前 20 个作品互动贡献</span><strong>95.8%</strong><em>1192 次互动 · 共 39 个作品</em><p>用于观察互动集中程度。</p></article>
       </div>
     </section>
     <section class="section" aria-labelledby="ranking-title">
@@ -198,254 +295,28 @@
     </section>
     <section class="section" aria-labelledby="owner-count-title">
       <div class="section-head"><div><h2 id="owner-count-title">负责人发布量</h2><p class="section-note">看谁在今天贡献了最多作品，也能顺手对比对应互动是否匹配。</p></div></div>
-      <div class="owner-count-grid"><article class="count-card"><span>郑建裕</span><strong>9</strong><em>36 互动 · 未过审 1</em><i style="--value:100;"></i></article>
-<article class="count-card"><span>叶开贤</span><strong>6</strong><em>150 互动 · 未过审 0</em><i style="--value:67;"></i></article>
-<article class="count-card"><span>廖明才</span><strong>6</strong><em>114 互动 · 未过审 2</em><i style="--value:67;"></i></article>
-<article class="count-card"><span>邱志权</span><strong>6</strong><em>45 互动 · 未过审 0</em><i style="--value:67;"></i></article>
-<article class="count-card"><span>魏才勇</span><strong>5</strong><em>68 互动 · 未过审 2</em><i style="--value:56;"></i></article>
-<article class="count-card"><span>王剑辉</span><strong>5</strong><em>57 互动 · 未过审 1</em><i style="--value:56;"></i></article>
-<article class="count-card"><span>非凡</span><strong>2</strong><em>774 互动 · 未过审 0</em><i style="--value:22;"></i></article></div>
+      <div class="owner-count-grid"><button type="button" class="count-card" data-owner="郑建裕" aria-label="查看郑建裕的账号"><span>郑建裕</span><strong>9</strong><em>36 互动 · 零互动 1</em><i style="--value:100;"></i></button>
+<button type="button" class="count-card" data-owner="叶开贤" aria-label="查看叶开贤的账号"><span>叶开贤</span><strong>6</strong><em>150 互动 · 零互动 0</em><i style="--value:67;"></i></button>
+<button type="button" class="count-card" data-owner="廖明才" aria-label="查看廖明才的账号"><span>廖明才</span><strong>6</strong><em>114 互动 · 零互动 2</em><i style="--value:67;"></i></button>
+<button type="button" class="count-card" data-owner="邱志权" aria-label="查看邱志权的账号"><span>邱志权</span><strong>6</strong><em>45 互动 · 零互动 0</em><i style="--value:67;"></i></button>
+<button type="button" class="count-card" data-owner="魏才勇" aria-label="查看魏才勇的账号"><span>魏才勇</span><strong>5</strong><em>68 互动 · 零互动 2</em><i style="--value:56;"></i></button>
+<button type="button" class="count-card" data-owner="王剑辉" aria-label="查看王剑辉的账号"><span>王剑辉</span><strong>5</strong><em>57 互动 · 零互动 1</em><i style="--value:56;"></i></button>
+<button type="button" class="count-card" data-owner="非凡" aria-label="查看非凡的账号"><span>非凡</span><strong>2</strong><em>774 互动 · 零互动 0</em><i style="--value:22;"></i></button></div>
     </section>
     <section class="section" aria-labelledby="account-performance-title">
-      <div class="section-head"><div><h2 id="account-performance-title">账号表现</h2><p class="section-note">按累计互动从高到低展示，进度条对比各账号与最高互动账号的表现。</p></div></div>
-      <div class="account-grid"><article class="account-card">
-          <div class="account-card-head"><h3>贤哥来了</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">非凡 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>549</strong></div><div><span>平均互动</span><b>549.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:100.0%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥丨流量陪跑</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">非凡 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>225</strong></div><div><span>平均互动</span><b>225.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:40.98%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥AI获客</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">叶开贤 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>75</strong></div><div><span>平均互动</span><b>75.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:13.66%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥私域圈</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">廖明才 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>55</strong></div><div><span>平均互动</span><b>55.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:10.02%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥获客思路</h3><span class="account-work-count">2 作品</span></div>
-          <p class="account-owner">魏才勇 10-22（2条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>43</strong></div><div><span>平均互动</span><b>21.5</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:7.83%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥·短视频获客</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">廖明才 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>33</strong></div><div><span>平均互动</span><b>33.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:6.01%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥操盘运营</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">王剑辉 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>29</strong></div><div><span>平均互动</span><b>29.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:5.28%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥流量池</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">叶开贤 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>29</strong></div><div><span>平均互动</span><b>29.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:5.28%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥—获客</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">魏才勇 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>25</strong></div><div><span>平均互动</span><b>25.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:4.55%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥大实话（IP孵化）</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">叶开贤 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>24</strong></div><div><span>平均互动</span><b>24.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:4.37%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥私域</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">廖明才 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>22</strong></div><div><span>平均互动</span><b>22.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:4.01%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥 | IP陪跑</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">邱志权 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>13</strong></div><div><span>平均互动</span><b>13.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:2.37%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥ip打造</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">邱志权 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>13</strong></div><div><span>平均互动</span><b>13.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:2.37%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card account-card-alert">
-          <div class="account-card-head"><h3>贤哥获客日常</h3><span class="account-work-count">2 作品</span></div>
-          <p class="account-owner">王剑辉 10-22（2条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>11</strong></div><div><span>平均互动</span><b>5.5</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:2.0%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>50.0%</b></span><span>未过审率 <b>50.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥讲流量</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">邱志权 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>11</strong></div><div><span>平均互动</span><b>11.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:2.0%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥｜流量操盘</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">叶开贤 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>10</strong></div><div><span>平均互动</span><b>10.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:1.82%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥操盘手</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">王剑辉 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>9</strong></div><div><span>平均互动</span><b>9.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:1.64%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥Ip打造日记</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">王剑辉 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>8</strong></div><div><span>平均互动</span><b>8.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:1.46%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥｜IP打造</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">叶开贤 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>8</strong></div><div><span>平均互动</span><b>8.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:1.46%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card account-card-alert">
-          <div class="account-card-head"><h3>贤哥商业圈</h3><span class="account-work-count">3 作品</span></div>
-          <p class="account-owner">郑建裕 10-22（1条）；邱志权 10-22（1条）；郑建裕 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>7</strong></div><div><span>平均互动</span><b>2.3</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:1.28%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>33.3%</b></span><span>未过审率 <b>33.3%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥别闲/ 流量</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">郑建裕 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>7</strong></div><div><span>平均互动</span><b>7.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:1.28%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥运营分享</h3><span class="account-work-count">2 作品</span></div>
-          <p class="account-owner">郑建裕 10-22（2条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>6</strong></div><div><span>平均互动</span><b>3.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:1.09%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥不闲</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">郑建裕 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>6</strong></div><div><span>平均互动</span><b>6.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:1.09%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥获客参谋</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">郑建裕 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>6</strong></div><div><span>平均互动</span><b>6.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:1.09%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥丨私域</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">郑建裕 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>5</strong></div><div><span>平均互动</span><b>5.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:0.91%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>拍拍-塘燕</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">廖明才 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>4</strong></div><div><span>平均互动</span><b>4.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:0.73%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥IP说</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">叶开贤 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>4</strong></div><div><span>平均互动</span><b>4.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:0.73%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥实战运营</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">邱志权 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>3</strong></div><div><span>平均互动</span><b>3.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:0.55%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥获客分享</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">邱志权 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>3</strong></div><div><span>平均互动</span><b>3.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:0.55%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card">
-          <div class="account-card-head"><h3>贤哥大实话</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">郑建裕 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>1</strong></div><div><span>平均互动</span><b>1.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:0.18%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
-        </article>
-<article class="account-card account-card-alert">
-          <div class="account-card-head"><h3>贤哥聊 AI</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">廖明才 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>0</strong></div><div><span>平均互动</span><b>0.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:0.0%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>100.0%</b></span><span>未过审率 <b>100.0%</b></span></div>
-        </article>
-<article class="account-card account-card-alert">
-          <div class="account-card-head"><h3>贤哥获客技巧</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">魏才勇 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>0</strong></div><div><span>平均互动</span><b>0.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:0.0%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>100.0%</b></span><span>未过审率 <b>100.0%</b></span></div>
-        </article>
-<article class="account-card account-card-alert">
-          <div class="account-card-head"><h3>贤哥说AI</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">廖明才 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>0</strong></div><div><span>平均互动</span><b>0.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:0.0%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>100.0%</b></span><span>未过审率 <b>100.0%</b></span></div>
-        </article>
-<article class="account-card account-card-alert">
-          <div class="account-card-head"><h3>贤哥谈获客</h3><span class="account-work-count">1 作品</span></div>
-          <p class="account-owner">魏才勇 10-22（1条）</p>
-          <div class="account-metrics"><div><span>累计互动</span><strong>0</strong></div><div><span>平均互动</span><b>0.0</b></div></div>
-          <div class="account-meter" aria-hidden="true"><i style="width:0.0%"></i></div>
-          <div class="account-rates"><span>零互动率 <b>100.0%</b></span><span>未过审率 <b>100.0%</b></span></div>
-        </article></div>
+      <div class="section-head"><div><h2 id="account-performance-title">账号表现</h2><p class="section-note">查找账号、定位零互动作品，点击卡片查看作品详情。指标随当前筛选范围更新。</p></div></div>
+      <div class="account-summary" id="account-summary" aria-label="筛选范围汇总" aria-live="polite"></div>
+      <div class="account-controls">
+        <label class="control">作品归属负责人<select id="account-owner" aria-label="账号负责人"></select></label>
+        <label class="control control-search">查找账号<input id="account-search" type="search" placeholder="输入账号名称" aria-label="搜索账号"></label>
+        <label class="control">排序方式<select id="account-sort" aria-label="账号排序"><option value="engagement">累计互动</option><option value="average">平均互动</option><option value="count">作品数</option><option value="zero">零互动作品数</option></select></label>
+      </div>
+      <div class="account-filter-row"><div class="account-tabs" role="group" aria-label="账号筛选"><button type="button" data-account-filter="all" aria-pressed="true">全部账号</button><button type="button" data-account-filter="zero" aria-pressed="false">有零互动作品</button><button type="button" data-account-filter="allzero" aria-pressed="false">全部作品零互动</button></div><button id="account-reset" class="ghost-button" type="button" hidden>清除筛选</button></div>
+      <div class="scope-row"><p id="account-scope"></p><span id="account-result-count" aria-live="polite"></span></div>
+      <div class="account-grid" id="account-grid"></div>
+      <div class="empty-state" id="account-empty" hidden><strong>没有符合条件的账号</strong><p>调整负责人、搜索词或筛选条件后重试。</p><button type="button" class="ghost-button" id="account-empty-reset">清除筛选</button></div>
+      <div class="expand-wrap"><button type="button" class="expand-button" id="account-expand" hidden>展开全部</button></div>
+      <noscript><p class="no-script">请启用浏览器 JavaScript 以查看账号卡片和作品明细。</p></noscript>
     </section>
     <section class="section" aria-labelledby="tags-title">
       <div class="section-head"><div><h2 id="tags-title">高频标签</h2><p class="section-note">标签只保留高频项，适合快速看当天主题倾向。</p></div></div>
@@ -459,42 +330,185 @@
 <div class="tag"><strong>#ai</strong><span>5</span><i style="--value:29;"></i></div></div>
     </section>
     <section class="section" aria-labelledby="works-title">
-      <div class="section-head"><div><h2 id="works-title">作品明细</h2><p class="section-note">支持搜索、Top 作品筛选和零互动/未过审筛选，方便你直接定位要复盘的条目。</p></div></div>
+      <div class="section-head"><div><h2 id="works-title">作品明细</h2><p class="section-note">支持负责人、账号和描述搜索；高互动按本期作品互动 P75（23）筛选。零互动不代表审核未通过。</p></div></div>
+      <div class="scope-row"><p id="work-scope" aria-live="polite"></p><button type="button" class="ghost-button" id="work-reset" hidden>清除作品筛选</button></div>
       <div class="table-shell">
         <div class="toolbar">
           <div class="segmented" role="group" aria-label="作品筛选">
             <button type="button" data-filter="all" aria-pressed="true">全部</button>
             <button type="button" data-filter="top" aria-pressed="false">高互动</button>
-            <button type="button" data-filter="zero" aria-pressed="false">零互动/未过审</button>
+            <button type="button" data-filter="zero" aria-pressed="false">零互动／待排查</button>
           </div>
-          <input class="search" type="search" placeholder="搜索负责人、账号或描述" aria-label="搜索作品">
+          <label class="control">作品负责人<select id="work-owner" aria-label="作品负责人"></select></label>
+          <input class="search" id="work-search" type="search" placeholder="搜索负责人、账号或描述" aria-label="搜索作品">
         </div>
         <div class="table-wrap">
           <table class="works-table">
-            <thead><tr><th>审核</th><th>发布时间</th><th>负责人</th><th>账号</th><th>描述</th><th>互动构成</th></tr></thead>
+            <thead><tr><th>互动状态</th><th>发布时间</th><th>负责人</th><th>账号</th><th>描述</th><th>互动构成</th></tr></thead>
             <tbody id="works-body"></tbody>
           </table>
-          <div class="empty" id="empty">没有匹配到作品</div>
+          <div class="empty empty-state" id="empty" hidden><strong>没有匹配到作品</strong><p>请调整搜索词或筛选条件。</p><button id="work-empty-reset" type="button" class="ghost-button">清除筛选</button></div>
         </div>
       </div>
     </section>
-    <section class="action-band" aria-label="行动建议"><span>行动建议</span><strong>动作建议：复制高表现选题 | 放大优质账号 | 修复零互动/未过审内容</strong></section>
+    <section class="action-band" aria-label="行动建议"><span>行动建议</span><strong>复盘头部账号作品 · 排查 6 个零互动作品</strong><div class="action-buttons"><button type="button" class="ghost-button" id="review-top">查看头部账号</button><button type="button" class="ghost-button" id="review-zero">排查零互动</button></div></section>
     <footer class="footer"><span>数据来源：Vela API 直连</span><span>抓取时间：2026-10-23 09:25:58 +08:00 </span></footer>
+    <details class="data-notes"><summary>统计口径与数据说明</summary><ul><li>统计范围：2026-10-22 00:00:00 至 2026-10-22 23:59:59（Asia/Shanghai），统计该范围内发布的作品，截至采集时的累计互动。</li><li>采集时间：2026-10-23 09:25:58 +08:00；互动 = 点赞 + 评论 + 分享 + 收藏。作品获得互动的时间不同，当前页面不提供跨日涨跌或近七天趋势。</li><li>发布账号数仅指本期有作品的账号，不代表全部矩阵账号。账号按接口昵称聚合。</li><li>负责人按作品记录归属；筛选负责人后，同一账号仅统计该负责人的关联作品。详情展示观察到的归属时间范围，不推断无作品日期或当前归属。</li><li>零互动为赞评转藏均为 0，不推断平台审核结果。请结合发布时间、数据更新和内容状态人工确认。</li><li>账号贡献占比的分母始终为本期全部作品总互动；卡片其他指标及顶部模块汇总随筛选范围更新。</li><li>数据源：Vela API 直连；API 39 / 拉取 39 / 去重 39。视频入口由有效视频 ID 生成，原视频是否可访问由平台决定。</li></ul></details>
   </main>
-  <script>
-    const works = [{"publish_time": "2026-10-22 10:30:00", "owner": "非凡", "account": "贤哥来了", "video_id": "7699051284347833423", "digg": 203, "comment": 88, "share": 69, "collect": 189, "engagement": 549, "unapproved": false, "review_status": "已过审", "content_summary": "讲workbuddy、二手车、ai的营销宣传", "describe": "二手车行业也能用workbuddy获客？？#workbuddy #二手车 #ai #ai工具"}, {"publish_time": "2026-10-22 14:26:00", "owner": "非凡", "account": "贤哥丨流量陪跑", "video_id": "7699051804026148495", "digg": 94, "comment": 39, "share": 31, "collect": 61, "engagement": 225, "unapproved": false, "review_status": "已过审", "content_summary": "讲原来workbuddy还能这样玩啊的科普知识", "describe": "原来workbuddy还能这样玩啊#workbuddy #获客 #ai #电商"}, {"publish_time": "2026-10-22 17:28:29", "owner": "叶开贤", "account": "贤哥AI获客", "video_id": "7699421693508907121", "digg": 46, "comment": 1, "share": 9, "collect": 19, "engagement": 75, "unapproved": false, "review_status": "已过审", "content_summary": "讲workbuddy、ai获客、传统行业的科普知识", "describe": "#workbuddy #ai获客 #传统行业 #截流"}, {"publish_time": "2026-10-22 16:47:10", "owner": "廖明才", "account": "贤哥私域圈", "video_id": "7699411048046530683", "digg": 28, "comment": 11, "share": 5, "collect": 11, "engagement": 55, "unapproved": false, "review_status": "已过审", "content_summary": "讲workbuddy自动获客工作流的科普知识", "describe": "work buddy 自动获客工作流#workbuddy#AI获客#新媒体运营#私域"}, {"publish_time": "2026-10-22 17:45:22", "owner": "廖明才", "account": "贤哥·短视频获客", "video_id": "7699426043513770491", "digg": 16, "comment": 6, "share": 2, "collect": 9, "engagement": 33, "unapproved": false, "review_status": "已过审", "content_summary": "讲workbuddy二手车获客的科普知识", "describe": "workbuddy二手车获客#私域#获客#AI获客"}, {"publish_time": "2026-10-22 09:10:00", "owner": "叶开贤", "account": "贤哥流量池", "video_id": "7699045737225322138", "digg": 18, "comment": 1, "share": 2, "collect": 8, "engagement": 29, "unapproved": false, "review_status": "已过审", "content_summary": "讲WorkBuddy、ai获客、截流的科普知识", "describe": "#WorkBuddy #ai获客 #截流"}, {"publish_time": "2026-10-22 16:14:04", "owner": "王剑辉", "account": "贤哥操盘运营", "video_id": "7699402518095092731", "digg": 15, "comment": 3, "share": 2, "collect": 9, "engagement": 29, "unapproved": false, "review_status": "已过审", "content_summary": "讲让ai自动找客户的案例分享", "describe": "让ai自动找客户，#ai获客 #workbuddy #ai工作"}, {"publish_time": "2026-10-22 17:15:03", "owner": "魏才勇", "account": "贤哥获客思路", "video_id": "7699418230963893170", "digg": 17, "comment": 2, "share": 3, "collect": 6, "engagement": 28, "unapproved": false, "review_status": "已过审", "content_summary": "讲workbuddy、截流、AI工具的实用技巧", "describe": "workbuddy这个玩法大家可以试一下 #workbuddy #截流 #AI工具 #私域引流 #短视频获客"}, {"publish_time": "2026-10-22 17:23:08", "owner": "魏才勇", "account": "贤哥—获客", "video_id": "7699420317060292278", "digg": 13, "comment": 3, "share": 2, "collect": 7, "engagement": 25, "unapproved": false, "review_status": "已过审", "content_summary": "讲workbuddy居然还能帮忙获客的实用技巧", "describe": "workbuddy居然还能帮忙获客？ #workbuddy #获客引流 #私域流量 #短视频获客 #AI工具"}, {"publish_time": "2026-10-22 16:53:37", "owner": "叶开贤", "account": "贤哥大实话（IP孵化）", "video_id": "7699412709654258033", "digg": 10, "comment": 2, "share": 3, "collect": 9, "engagement": 24, "unapproved": false, "review_status": "已过审", "content_summary": "讲传统行业、ai获客、workbuddy的科普知识", "describe": "#传统行业 #ai获客 #workbuddy #截流"}, {"publish_time": "2026-10-22 15:20:06", "owner": "廖明才", "account": "贤哥私域", "video_id": "7699388607798523635", "digg": 15, "comment": 0, "share": 1, "collect": 6, "engagement": 22, "unapproved": false, "review_status": "已过审", "content_summary": "讲私域天花板的科普知识", "describe": "私域天花板#私域#私域运营#干货分享内容太过真实"}, {"publish_time": "2026-10-22 16:18:22", "owner": "魏才勇", "account": "贤哥获客思路", "video_id": "7699403622303880010", "digg": 8, "comment": 3, "share": 1, "collect": 3, "engagement": 15, "unapproved": false, "review_status": "已过审", "content_summary": "讲新的获客模型来了的实用技巧", "describe": "新的获客模型来了 #私域引流 #ai获客引流 #精准获客 #短视频获客 #截流"}, {"publish_time": "2026-10-22 10:23:11", "owner": "邱志权", "account": "贤哥 | IP陪跑", "video_id": "7699312097280932543", "digg": 8, "comment": 3, "share": 0, "collect": 2, "engagement": 13, "unapproved": false, "review_status": "已过审", "content_summary": "讲ai获客、截流、打粉的科普知识", "describe": "#ai获客 #截流 #打粉 #线上获客 #矩阵"}, {"publish_time": "2026-10-22 16:53:48", "owner": "邱志权", "account": "贤哥ip打造", "video_id": "7699412758906973873", "digg": 7, "comment": 2, "share": 2, "collect": 2, "engagement": 13, "unapproved": false, "review_status": "已过审", "content_summary": "讲截流、获客、线上获客的科普知识", "describe": "6.0 #截流 #获客 #线上获客 #ai获客 #打粉"}, {"publish_time": "2026-10-22 10:16:48", "owner": "邱志权", "account": "贤哥讲流量", "video_id": "7699310449914267263", "digg": 1, "comment": 7, "share": 2, "collect": 1, "engagement": 11, "unapproved": false, "review_status": "已过审", "content_summary": "讲codex真的太离谱了的科普知识", "describe": "codex真的太离谱了 #ai #codex #ai获客 #线上获客 #打粉"}, {"publish_time": "2026-10-22 16:44:12", "owner": "王剑辉", "account": "贤哥获客日常", "video_id": "7699410277070073705", "digg": 6, "comment": 0, "share": 0, "collect": 5, "engagement": 11, "unapproved": false, "review_status": "已过审", "content_summary": "讲codex、ai获客、ai工作的科普知识", "describe": "#codex #ai获客 #ai工作"}, {"publish_time": "2026-10-22 14:15:00", "owner": "叶开贤", "account": "贤哥｜流量操盘", "video_id": "7699047417845174351", "digg": 6, "comment": 0, "share": 2, "collect": 2, "engagement": 10, "unapproved": false, "review_status": "已过审", "content_summary": "讲ai获客、chatgpt、截流的科普知识", "describe": "#ai获客 #chatgpt #截流"}, {"publish_time": "2026-10-22 13:58:16", "owner": "王剑辉", "account": "贤哥操盘手", "video_id": "7699367519731870054", "digg": 4, "comment": 2, "share": 2, "collect": 1, "engagement": 9, "unapproved": false, "review_status": "已过审", "content_summary": "讲WorkBuddy、获客系统、ai的科普知识", "describe": "#WorkBuddy #获客系统 #ai"}, {"publish_time": "2026-10-22 16:02:45", "owner": "叶开贤", "account": "贤哥｜IP打造", "video_id": "7699399599585056185", "digg": 5, "comment": 1, "share": 0, "collect": 2, "engagement": 8, "unapproved": false, "review_status": "已过审", "content_summary": "讲codex实现自动获客的科普知识", "describe": "codex实现自动获客#ai获客 #codex #截流"}, {"publish_time": "2026-10-22 16:12:19", "owner": "王剑辉", "account": "贤哥Ip打造日记", "video_id": "7699402059896348921", "digg": 5, "comment": 1, "share": 1, "collect": 1, "engagement": 8, "unapproved": false, "review_status": "已过审", "content_summary": "讲codex智能体，自动筛选意向客户的案例分享", "describe": "codex智能体，自动筛选意向客户#获客 #codex #ai工作"}, {"publish_time": "2026-10-22 17:35:17", "owner": "郑建裕", "account": "贤哥别闲/ 流量", "video_id": "7699423439426339241", "digg": 3, "comment": 0, "share": 2, "collect": 2, "engagement": 7, "unapproved": false, "review_status": "已过审", "content_summary": "讲来看看这套玩法怎么样的案例分享", "describe": "来看看这套玩法怎么样#私域 #找客户 #截流"}, {"publish_time": "2026-10-22 11:40:00", "owner": "郑建裕", "account": "贤哥获客参谋", "video_id": "7699299742677823154", "digg": 4, "comment": 1, "share": 0, "collect": 1, "engagement": 6, "unapproved": false, "review_status": "已过审", "content_summary": "讲现在的ai真的太强大了的案例分享", "describe": "现在的ai真的太强大了#科技改变生活 #私域 #运营干货 #找客户"}, {"publish_time": "2026-10-22 14:00:00", "owner": "郑建裕", "account": "贤哥不闲", "video_id": "7699320916903277817", "digg": 4, "comment": 0, "share": 0, "collect": 2, "engagement": 6, "unapproved": false, "review_status": "已过审", "content_summary": "讲时代在进步，方法也要进步的案例分享", "describe": "时代在进步，方法也要进步#私域 #找客户 #截流"}, {"publish_time": "2026-10-22 15:54:56", "owner": "郑建裕", "account": "贤哥丨私域", "video_id": "7699397586381832127", "digg": 4, "comment": 0, "share": 0, "collect": 1, "engagement": 5, "unapproved": false, "review_status": "已过审", "content_summary": "讲一条原创内容的价值，超乎你的想象的科普知识", "describe": "一条原创内容的价值，超乎你的想象#短视频运营 #干货知识分享 #私域流量"}, {"publish_time": "2026-10-22 19:00:00", "owner": "郑建裕", "account": "贤哥商业圈", "video_id": "7699405542339030634", "digg": 5, "comment": 0, "share": 0, "collect": 0, "engagement": 5, "unapproved": false, "review_status": "已过审", "content_summary": "讲为什么你的账号容易掉的案例分享", "describe": "为什么你的账号容易掉#私域 #找客户 #私域流量"}, {"publish_time": "2026-10-22 20:50:00", "owner": "郑建裕", "account": "贤哥运营分享", "video_id": "7699428003252551673", "digg": 3, "comment": 1, "share": 1, "collect": 0, "engagement": 5, "unapproved": false, "review_status": "已过审", "content_summary": "讲账号的基础权重很重要的科普知识", "describe": "账号的基础权重很重要#干货知识分享 #运营干货 #短视频运营"}, {"publish_time": "2026-10-22 15:13:01", "owner": "叶开贤", "account": "贤哥IP说", "video_id": "7699386784883570353", "digg": 3, "comment": 0, "share": 1, "collect": 0, "engagement": 4, "unapproved": false, "review_status": "已过审", "content_summary": "讲传统行业怎么借助ai来获客的科普知识", "describe": "传统行业怎么借助ai来获客#ai实体创业 #ai获客 #deepseek #截流"}, {"publish_time": "2026-10-22 15:55:41", "owner": "廖明才", "account": "拍拍-塘燕", "video_id": "7699397777873234586", "digg": 4, "comment": 0, "share": 0, "collect": 0, "engagement": 4, "unapproved": false, "review_status": "已过审", "content_summary": "讲什么是钩子的科普知识", "describe": "什么是钩子#私域#钩子#干货分享 #新媒体运营"}, {"publish_time": "2026-10-22 15:49:20", "owner": "邱志权", "account": "贤哥实战运营", "video_id": "7699396144372277602", "digg": 1, "comment": 0, "share": 1, "collect": 1, "engagement": 3, "unapproved": false, "review_status": "已过审", "content_summary": "讲ai、ai获客、自媒体的案例分享", "describe": "#ai #ai获客 #自媒体 #线上获客 #找客户"}, {"publish_time": "2026-10-22 17:29:06", "owner": "邱志权", "account": "贤哥获客分享", "video_id": "7699421853563966310", "digg": 2, "comment": 0, "share": 0, "collect": 1, "engagement": 3, "unapproved": false, "review_status": "已过审", "content_summary": "讲为什么你的视频一直没有流量的科普知识", "describe": "为什么你的视频一直没有流量#流量#短视频#干货分享#自媒体干货分享"}, {"publish_time": "2026-10-22 16:45:39", "owner": "邱志权", "account": "贤哥商业圈", "video_id": "7699410653828073061", "digg": 2, "comment": 0, "share": 0, "collect": 0, "engagement": 2, "unapproved": false, "review_status": "已过审", "content_summary": "讲codex的案例分享", "describe": "codex #codex #获客 #ai获客 #线上获客 #找客户"}, {"publish_time": "2026-10-22 09:19:37", "owner": "郑建裕", "account": "贤哥大实话", "video_id": "7699295709379605477", "digg": 1, "comment": 0, "share": 0, "collect": 0, "engagement": 1, "unapproved": false, "review_status": "已过审", "content_summary": "讲做好这六点，你也是运营老手的科普知识", "describe": "做好这六点，你也是运营老手#干货分享 #运营 #截流 #私域"}, {"publish_time": "2026-10-22 10:23:57", "owner": "郑建裕", "account": "贤哥运营分享", "video_id": "7699312292533784827", "digg": 1, "comment": 0, "share": 0, "collect": 0, "engagement": 1, "unapproved": false, "review_status": "已过审", "content_summary": "讲私域、截流、找客户的案例分享", "describe": "大家有没有发现一个现象，现在做自然流的团队越来越少#私域#截流 #找客户 #ai工具"}, {"publish_time": "2026-10-22 14:04:20", "owner": "王剑辉", "account": "贤哥获客日常", "video_id": "7699369085024955647", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "未过审", "content_summary": "讲workbuddy、获客、ai工作的科普知识", "describe": "#workbuddy #获客 #ai工作"}, {"publish_time": "2026-10-22 14:30:13", "owner": "郑建裕", "account": "贤哥商业圈", "video_id": "7699375755998156906", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "未过审", "content_summary": "讲workbuddy这个版本也太强了吧的科普知识", "describe": "workbuddy这个版本也太强了吧#私域 #workbuddy #截流"}, {"publish_time": "2026-10-22 17:22:24", "owner": "魏才勇", "account": "贤哥获客技巧", "video_id": "7699420128535181669", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "未过审", "content_summary": "讲codex这个功能太强了吧的实用技巧", "describe": "codex这个功能太强了吧？#codex #AI工具 #短视频获客 #私域引流 #截流"}, {"publish_time": "2026-10-22 17:47:28", "owner": "廖明才", "account": "贤哥聊 AI", "video_id": "7699426582783330662", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "未过审", "content_summary": "讲workbuddy二手房获客的科普知识", "describe": "work buddy 二手房获客#AI获客#workbuddy#新媒体运营"}, {"publish_time": "2026-10-22 17:59:15", "owner": "廖明才", "account": "贤哥说AI", "video_id": "7699429618898237386", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "未过审", "content_summary": "讲打粉这项目怎么样的案例分享", "describe": "打粉这项目怎么样#打粉#私域#新媒体运营"}, {"publish_time": "2026-10-22 19:20:00", "owner": "魏才勇", "account": "贤哥谈获客", "video_id": "7699404625392767994", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "未过审", "content_summary": "讲是谁用codex来获客的的营销宣传", "describe": "是谁用codex来获客的 #codex #截流 #私域流量 #短视频获客 #AI工具"}];
-    const state = { filter: "all", query: "" };
-    const tbody = document.querySelector("#works-body");
-    const empty = document.querySelector("#empty");
-    const buttons = [...document.querySelectorAll("[data-filter]")];
-    const search = document.querySelector(".search");
-    function escapeHtml(value) { return String(value).replace(/[&<>"']/g, char => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" })[char]); }
-    function matchesFilter(work) { if (state.filter === "top") return work.engagement >= 23; if (state.filter === "zero") return work.unapproved; return true; }
-    function matchesQuery(work) { if (!state.query) return true; return `${work.owner} ${work.account} ${work.describe}`.toLowerCase().includes(state.query); }
-    function renderWorks() { const rows = works.filter(work => matchesFilter(work) && matchesQuery(work)); tbody.innerHTML = rows.map(work => `<tr><td><span class="pill">${escapeHtml(work.review_status)}</span></td><td>${escapeHtml(work.publish_time.slice(11))}<br><span class="muted">${escapeHtml(work.publish_time.slice(0,10))}</span></td><td>${escapeHtml(work.owner)}</td><td>${escapeHtml(work.account)}</td><td class="desc">${escapeHtml(work.describe)}</td><td>赞 ${work.digg} · 评 ${work.comment}<br>转 ${work.share} · 藏 ${work.collect}</td></tr>`).join(""); empty.style.display = rows.length ? "none" : "block"; }
-    buttons.forEach(button => button.addEventListener("click", () => { state.filter = button.dataset.filter; buttons.forEach(item => item.setAttribute("aria-pressed", item === button ? "true" : "false")); renderWorks(); }));
-    search.addEventListener("input", event => { state.query = event.target.value.trim().toLowerCase(); renderWorks(); });
-    renderWorks();
-  </script>
+  <dialog id="account-dialog" aria-labelledby="drawer-title" aria-describedby="drawer-scope"><div class="drawer-frame"><header class="drawer-header"><div><h2 id="drawer-title"></h2><p id="drawer-scope"></p></div><button type="button" class="drawer-close" id="drawer-close" aria-label="关闭账号详情">✕</button></header><div class="drawer-scroll" id="drawer-scroll"><div class="drawer-summary" id="drawer-summary"></div><section class="drawer-section"><h3>作品负责人归属</h3><div class="drawer-owners" id="drawer-owners"></div></section><section class="drawer-section"><h3>互动构成</h3><div class="drawer-breakdown" id="drawer-breakdown"></div></section><section class="drawer-section"><h3>本期作品</h3><p class="note">零互动可能与发布时间、数据更新或内容状态有关；请查看原视频后确认。</p><div id="drawer-works"></div></section></div><footer class="drawer-footer"><button type="button" class="ghost-button" id="drawer-to-works">在作品明细中查看此账号</button></footer></div></dialog>
+  <script>window.velaData = {"works": [{"publish_time": "2026-10-22 10:30:00", "owner": "非凡", "account": "贤哥来了", "video_id": "7699051284347833423", "digg": 203, "comment": 88, "share": 69, "collect": 189, "engagement": 549, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699051284347833423", "content_summary": "讲workbuddy、二手车、ai的营销宣传", "describe": "二手车行业也能用workbuddy获客？？#workbuddy #二手车 #ai #ai工具"}, {"publish_time": "2026-10-22 14:26:00", "owner": "非凡", "account": "贤哥丨流量陪跑", "video_id": "7699051804026148495", "digg": 94, "comment": 39, "share": 31, "collect": 61, "engagement": 225, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699051804026148495", "content_summary": "讲原来workbuddy还能这样玩啊的科普知识", "describe": "原来workbuddy还能这样玩啊#workbuddy #获客 #ai #电商"}, {"publish_time": "2026-10-22 17:28:29", "owner": "叶开贤", "account": "贤哥AI获客", "video_id": "7699421693508907121", "digg": 46, "comment": 1, "share": 9, "collect": 19, "engagement": 75, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699421693508907121", "content_summary": "讲workbuddy、ai获客、传统行业的科普知识", "describe": "#workbuddy #ai获客 #传统行业 #截流"}, {"publish_time": "2026-10-22 16:47:10", "owner": "廖明才", "account": "贤哥私域圈", "video_id": "7699411048046530683", "digg": 28, "comment": 11, "share": 5, "collect": 11, "engagement": 55, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699411048046530683", "content_summary": "讲workbuddy自动获客工作流的科普知识", "describe": "work buddy 自动获客工作流#workbuddy#AI获客#新媒体运营#私域"}, {"publish_time": "2026-10-22 17:45:22", "owner": "廖明才", "account": "贤哥·短视频获客", "video_id": "7699426043513770491", "digg": 16, "comment": 6, "share": 2, "collect": 9, "engagement": 33, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699426043513770491", "content_summary": "讲workbuddy二手车获客的科普知识", "describe": "workbuddy二手车获客#私域#获客#AI获客"}, {"publish_time": "2026-10-22 09:10:00", "owner": "叶开贤", "account": "贤哥流量池", "video_id": "7699045737225322138", "digg": 18, "comment": 1, "share": 2, "collect": 8, "engagement": 29, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699045737225322138", "content_summary": "讲WorkBuddy、ai获客、截流的科普知识", "describe": "#WorkBuddy #ai获客 #截流"}, {"publish_time": "2026-10-22 16:14:04", "owner": "王剑辉", "account": "贤哥操盘运营", "video_id": "7699402518095092731", "digg": 15, "comment": 3, "share": 2, "collect": 9, "engagement": 29, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699402518095092731", "content_summary": "讲让ai自动找客户的案例分享", "describe": "让ai自动找客户，#ai获客 #workbuddy #ai工作"}, {"publish_time": "2026-10-22 17:15:03", "owner": "魏才勇", "account": "贤哥获客思路", "video_id": "7699418230963893170", "digg": 17, "comment": 2, "share": 3, "collect": 6, "engagement": 28, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699418230963893170", "content_summary": "讲workbuddy、截流、AI工具的实用技巧", "describe": "workbuddy这个玩法大家可以试一下 #workbuddy #截流 #AI工具 #私域引流 #短视频获客"}, {"publish_time": "2026-10-22 17:23:08", "owner": "魏才勇", "account": "贤哥—获客", "video_id": "7699420317060292278", "digg": 13, "comment": 3, "share": 2, "collect": 7, "engagement": 25, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699420317060292278", "content_summary": "讲workbuddy居然还能帮忙获客的实用技巧", "describe": "workbuddy居然还能帮忙获客？ #workbuddy #获客引流 #私域流量 #短视频获客 #AI工具"}, {"publish_time": "2026-10-22 16:53:37", "owner": "叶开贤", "account": "贤哥大实话（IP孵化）", "video_id": "7699412709654258033", "digg": 10, "comment": 2, "share": 3, "collect": 9, "engagement": 24, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699412709654258033", "content_summary": "讲传统行业、ai获客、workbuddy的科普知识", "describe": "#传统行业 #ai获客 #workbuddy #截流"}, {"publish_time": "2026-10-22 15:20:06", "owner": "廖明才", "account": "贤哥私域", "video_id": "7699388607798523635", "digg": 15, "comment": 0, "share": 1, "collect": 6, "engagement": 22, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699388607798523635", "content_summary": "讲私域天花板的科普知识", "describe": "私域天花板#私域#私域运营#干货分享内容太过真实"}, {"publish_time": "2026-10-22 16:18:22", "owner": "魏才勇", "account": "贤哥获客思路", "video_id": "7699403622303880010", "digg": 8, "comment": 3, "share": 1, "collect": 3, "engagement": 15, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699403622303880010", "content_summary": "讲新的获客模型来了的实用技巧", "describe": "新的获客模型来了 #私域引流 #ai获客引流 #精准获客 #短视频获客 #截流"}, {"publish_time": "2026-10-22 10:23:11", "owner": "邱志权", "account": "贤哥 | IP陪跑", "video_id": "7699312097280932543", "digg": 8, "comment": 3, "share": 0, "collect": 2, "engagement": 13, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699312097280932543", "content_summary": "讲ai获客、截流、打粉的科普知识", "describe": "#ai获客 #截流 #打粉 #线上获客 #矩阵"}, {"publish_time": "2026-10-22 16:53:48", "owner": "邱志权", "account": "贤哥ip打造", "video_id": "7699412758906973873", "digg": 7, "comment": 2, "share": 2, "collect": 2, "engagement": 13, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699412758906973873", "content_summary": "讲截流、获客、线上获客的科普知识", "describe": "6.0 #截流 #获客 #线上获客 #ai获客 #打粉"}, {"publish_time": "2026-10-22 10:16:48", "owner": "邱志权", "account": "贤哥讲流量", "video_id": "7699310449914267263", "digg": 1, "comment": 7, "share": 2, "collect": 1, "engagement": 11, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699310449914267263", "content_summary": "讲codex真的太离谱了的科普知识", "describe": "codex真的太离谱了 #ai #codex #ai获客 #线上获客 #打粉"}, {"publish_time": "2026-10-22 16:44:12", "owner": "王剑辉", "account": "贤哥获客日常", "video_id": "7699410277070073705", "digg": 6, "comment": 0, "share": 0, "collect": 5, "engagement": 11, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699410277070073705", "content_summary": "讲codex、ai获客、ai工作的科普知识", "describe": "#codex #ai获客 #ai工作"}, {"publish_time": "2026-10-22 14:15:00", "owner": "叶开贤", "account": "贤哥｜流量操盘", "video_id": "7699047417845174351", "digg": 6, "comment": 0, "share": 2, "collect": 2, "engagement": 10, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699047417845174351", "content_summary": "讲ai获客、chatgpt、截流的科普知识", "describe": "#ai获客 #chatgpt #截流"}, {"publish_time": "2026-10-22 13:58:16", "owner": "王剑辉", "account": "贤哥操盘手", "video_id": "7699367519731870054", "digg": 4, "comment": 2, "share": 2, "collect": 1, "engagement": 9, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699367519731870054", "content_summary": "讲WorkBuddy、获客系统、ai的科普知识", "describe": "#WorkBuddy #获客系统 #ai"}, {"publish_time": "2026-10-22 16:02:45", "owner": "叶开贤", "account": "贤哥｜IP打造", "video_id": "7699399599585056185", "digg": 5, "comment": 1, "share": 0, "collect": 2, "engagement": 8, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699399599585056185", "content_summary": "讲codex实现自动获客的科普知识", "describe": "codex实现自动获客#ai获客 #codex #截流"}, {"publish_time": "2026-10-22 16:12:19", "owner": "王剑辉", "account": "贤哥Ip打造日记", "video_id": "7699402059896348921", "digg": 5, "comment": 1, "share": 1, "collect": 1, "engagement": 8, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699402059896348921", "content_summary": "讲codex智能体，自动筛选意向客户的案例分享", "describe": "codex智能体，自动筛选意向客户#获客 #codex #ai工作"}, {"publish_time": "2026-10-22 17:35:17", "owner": "郑建裕", "account": "贤哥别闲/ 流量", "video_id": "7699423439426339241", "digg": 3, "comment": 0, "share": 2, "collect": 2, "engagement": 7, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699423439426339241", "content_summary": "讲来看看这套玩法怎么样的案例分享", "describe": "来看看这套玩法怎么样#私域 #找客户 #截流"}, {"publish_time": "2026-10-22 11:40:00", "owner": "郑建裕", "account": "贤哥获客参谋", "video_id": "7699299742677823154", "digg": 4, "comment": 1, "share": 0, "collect": 1, "engagement": 6, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699299742677823154", "content_summary": "讲现在的ai真的太强大了的案例分享", "describe": "现在的ai真的太强大了#科技改变生活 #私域 #运营干货 #找客户"}, {"publish_time": "2026-10-22 14:00:00", "owner": "郑建裕", "account": "贤哥不闲", "video_id": "7699320916903277817", "digg": 4, "comment": 0, "share": 0, "collect": 2, "engagement": 6, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699320916903277817", "content_summary": "讲时代在进步，方法也要进步的案例分享", "describe": "时代在进步，方法也要进步#私域 #找客户 #截流"}, {"publish_time": "2026-10-22 15:54:56", "owner": "郑建裕", "account": "贤哥丨私域", "video_id": "7699397586381832127", "digg": 4, "comment": 0, "share": 0, "collect": 1, "engagement": 5, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699397586381832127", "content_summary": "讲一条原创内容的价值，超乎你的想象的科普知识", "describe": "一条原创内容的价值，超乎你的想象#短视频运营 #干货知识分享 #私域流量"}, {"publish_time": "2026-10-22 19:00:00", "owner": "郑建裕", "account": "贤哥商业圈", "video_id": "7699405542339030634", "digg": 5, "comment": 0, "share": 0, "collect": 0, "engagement": 5, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699405542339030634", "content_summary": "讲为什么你的账号容易掉的案例分享", "describe": "为什么你的账号容易掉#私域 #找客户 #私域流量"}, {"publish_time": "2026-10-22 20:50:00", "owner": "郑建裕", "account": "贤哥运营分享", "video_id": "7699428003252551673", "digg": 3, "comment": 1, "share": 1, "collect": 0, "engagement": 5, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699428003252551673", "content_summary": "讲账号的基础权重很重要的科普知识", "describe": "账号的基础权重很重要#干货知识分享 #运营干货 #短视频运营"}, {"publish_time": "2026-10-22 15:13:01", "owner": "叶开贤", "account": "贤哥IP说", "video_id": "7699386784883570353", "digg": 3, "comment": 0, "share": 1, "collect": 0, "engagement": 4, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699386784883570353", "content_summary": "讲传统行业怎么借助ai来获客的科普知识", "describe": "传统行业怎么借助ai来获客#ai实体创业 #ai获客 #deepseek #截流"}, {"publish_time": "2026-10-22 15:55:41", "owner": "廖明才", "account": "拍拍-塘燕", "video_id": "7699397777873234586", "digg": 4, "comment": 0, "share": 0, "collect": 0, "engagement": 4, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699397777873234586", "content_summary": "讲什么是钩子的科普知识", "describe": "什么是钩子#私域#钩子#干货分享 #新媒体运营"}, {"publish_time": "2026-10-22 15:49:20", "owner": "邱志权", "account": "贤哥实战运营", "video_id": "7699396144372277602", "digg": 1, "comment": 0, "share": 1, "collect": 1, "engagement": 3, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699396144372277602", "content_summary": "讲ai、ai获客、自媒体的案例分享", "describe": "#ai #ai获客 #自媒体 #线上获客 #找客户"}, {"publish_time": "2026-10-22 17:29:06", "owner": "邱志权", "account": "贤哥获客分享", "video_id": "7699421853563966310", "digg": 2, "comment": 0, "share": 0, "collect": 1, "engagement": 3, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699421853563966310", "content_summary": "讲为什么你的视频一直没有流量的科普知识", "describe": "为什么你的视频一直没有流量#流量#短视频#干货分享#自媒体干货分享"}, {"publish_time": "2026-10-22 16:45:39", "owner": "邱志权", "account": "贤哥商业圈", "video_id": "7699410653828073061", "digg": 2, "comment": 0, "share": 0, "collect": 0, "engagement": 2, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699410653828073061", "content_summary": "讲codex的案例分享", "describe": "codex #codex #获客 #ai获客 #线上获客 #找客户"}, {"publish_time": "2026-10-22 09:19:37", "owner": "郑建裕", "account": "贤哥大实话", "video_id": "7699295709379605477", "digg": 1, "comment": 0, "share": 0, "collect": 0, "engagement": 1, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699295709379605477", "content_summary": "讲做好这六点，你也是运营老手的科普知识", "describe": "做好这六点，你也是运营老手#干货分享 #运营 #截流 #私域"}, {"publish_time": "2026-10-22 10:23:57", "owner": "郑建裕", "account": "贤哥运营分享", "video_id": "7699312292533784827", "digg": 1, "comment": 0, "share": 0, "collect": 0, "engagement": 1, "unapproved": false, "review_status": "有互动", "video_url": "https://www.douyin.com/video/7699312292533784827", "content_summary": "讲私域、截流、找客户的案例分享", "describe": "大家有没有发现一个现象，现在做自然流的团队越来越少#私域#截流 #找客户 #ai工具"}, {"publish_time": "2026-10-22 14:04:20", "owner": "王剑辉", "account": "贤哥获客日常", "video_id": "7699369085024955647", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "零互动／待排查", "video_url": "https://www.douyin.com/video/7699369085024955647", "content_summary": "讲workbuddy、获客、ai工作的科普知识", "describe": "#workbuddy #获客 #ai工作"}, {"publish_time": "2026-10-22 14:30:13", "owner": "郑建裕", "account": "贤哥商业圈", "video_id": "7699375755998156906", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "零互动／待排查", "video_url": "https://www.douyin.com/video/7699375755998156906", "content_summary": "讲workbuddy这个版本也太强了吧的科普知识", "describe": "workbuddy这个版本也太强了吧#私域 #workbuddy #截流"}, {"publish_time": "2026-10-22 17:22:24", "owner": "魏才勇", "account": "贤哥获客技巧", "video_id": "7699420128535181669", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "零互动／待排查", "video_url": "https://www.douyin.com/video/7699420128535181669", "content_summary": "讲codex这个功能太强了吧的实用技巧", "describe": "codex这个功能太强了吧？#codex #AI工具 #短视频获客 #私域引流 #截流"}, {"publish_time": "2026-10-22 17:47:28", "owner": "廖明才", "account": "贤哥聊 AI", "video_id": "7699426582783330662", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "零互动／待排查", "video_url": "https://www.douyin.com/video/7699426582783330662", "content_summary": "讲workbuddy二手房获客的科普知识", "describe": "work buddy 二手房获客#AI获客#workbuddy#新媒体运营"}, {"publish_time": "2026-10-22 17:59:15", "owner": "廖明才", "account": "贤哥说AI", "video_id": "7699429618898237386", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "零互动／待排查", "video_url": "https://www.douyin.com/video/7699429618898237386", "content_summary": "讲打粉这项目怎么样的案例分享", "describe": "打粉这项目怎么样#打粉#私域#新媒体运营"}, {"publish_time": "2026-10-22 19:20:00", "owner": "魏才勇", "account": "贤哥谈获客", "video_id": "7699404625392767994", "digg": 0, "comment": 0, "share": 0, "collect": 0, "engagement": 0, "unapproved": true, "review_status": "零互动／待排查", "video_url": "https://www.douyin.com/video/7699404625392767994", "content_summary": "讲是谁用codex来获客的的营销宣传", "describe": "是谁用codex来获客的 #codex #截流 #私域流量 #短视频获客 #AI工具"}], "meta": {"start": "2026-10-22 00:00:00", "end": "2026-10-22 23:59:59", "top_threshold": 23}};</script>
+  <script>(() => {
+  'use strict';
+  const {works, meta} = window.velaData;
+  const $ = selector => document.querySelector(selector);
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]));
+  const num = value => Number(value).toLocaleString('zh-CN', {maximumFractionDigits:1});
+  const rate = (part, whole) => `${whole ? (part / whole * 100).toFixed(1) : '0.0'}%`;
+  const avg = row => row.count ? row.engagement / row.count : 0;
+  const sum = (rows, key) => rows.reduce((total, row) => total + row[key], 0);
+  const wholeEngagement = sum(works, 'engagement');
+  const owners = [...new Set(works.map(work => work.owner))].sort((a,b) => a.localeCompare(b,'zh-CN'));
+  const accountState = {owner:'', query:'', filter:'all', sort:'engagement', expanded:false};
+  const workState = {filter:'all', query:'', owner:'', account:''};
+  const drawer = $('#account-dialog');
+  let drawerOpener;
+  let drawerScroll = 0;
+
+  function aggregate(rows) {
+    const grouped = new Map();
+    rows.forEach(work => {
+      if (!grouped.has(work.account)) grouped.set(work.account, {name:work.account,count:0,engagement:0,zero:0,owners:new Set(),works:[]});
+      const account = grouped.get(work.account);
+      account.count++;
+      account.engagement += work.engagement;
+      account.zero += work.engagement === 0 ? 1 : 0;
+      account.owners.add(work.owner);
+      account.works.push(work);
+    });
+    return [...grouped.values()];
+  }
+  function scopedAccounts() {
+    return aggregate(works.filter(work => !accountState.owner || work.owner === accountState.owner))
+      .filter(row => row.name.toLowerCase().includes(accountState.query.trim().toLowerCase()))
+      .filter(row => accountState.filter === 'all' || (accountState.filter === 'zero' ? row.zero > 0 : row.zero === row.count))
+      .sort((a,b) => {
+        const metric = row => accountState.sort === 'average' ? avg(row) : accountState.sort === 'count' ? row.count : accountState.sort === 'zero' ? row.zero : row.engagement;
+        return metric(b)-metric(a) || b.engagement-a.engagement || a.name.localeCompare(b.name,'zh-CN');
+      });
+  }
+  function ownerLabel(row) {
+    const names = [...row.owners];
+    return names.length === 1 ? `作品归属：${names[0]}` : `作品涉及 ${names.length} 位负责人`;
+  }
+  function renderAccounts() {
+    const rows = scopedAccounts();
+    const count = sum(rows,'count'), engagement = sum(rows,'engagement'), zero = sum(rows,'zero');
+    const scope = accountState.owner ? `${accountState.owner}的作品范围` : '全部负责人';
+    $('#account-summary').innerHTML = [['发布账号',rows.length],['作品数',count],['累计互动',engagement],['零互动作品',zero]].map(([label,value]) => `<div><span>${label}</span><strong>${num(value)}</strong></div>`).join('');
+    $('#account-scope').textContent = `${scope} · ${rows.length} 个账号 · ${count} 个作品${accountState.filter === 'zero' ? ' · 有零互动作品' : accountState.filter === 'allzero' ? ' · 全部作品零互动' : ''}${accountState.query.trim() ? ` · 搜索「${accountState.query.trim()}」` : ''}`;
+    const limited = accountState.filter === 'all' && !accountState.query.trim() && !accountState.expanded;
+    const visible = limited ? rows.slice(0,12) : rows;
+    $('#account-result-count').textContent = `显示 ${visible.length} / ${rows.length} 个账号`;
+    $('#account-grid').innerHTML = visible.map(row => {
+      const label = {engagement:'累计互动',average:'平均互动',count:'作品数',zero:'零互动作品'}[accountState.sort];
+      const value = {engagement:num(row.engagement),average:avg(row).toFixed(1),count:num(row.count),zero:`${row.zero} / ${row.count}`}[accountState.sort];
+      const secondary = accountState.sort === 'engagement' ? `贡献当日总互动 ${rate(row.engagement,wholeEngagement)}` : `累计互动 ${num(row.engagement)} · ${row.count} 个作品`;
+      const average = row.count > 1 && accountState.sort !== 'average' ? `<span>平均互动 ${avg(row).toFixed(1)}</span>` : '';
+      return `<article class="account-card" data-account="${esc(row.name)}"><div class="account-card-head"><h3>${esc(row.name)}</h3><span class="account-work-count">${row.count} 作品</span></div><p class="account-owner">${esc(ownerLabel(row))}</p><div class="account-primary"><span>${label}</span><strong>${value}</strong></div><div class="account-secondary"><span>${secondary}</span>${average}</div><div class="account-health ${row.zero ? 'has-zero' : ''}">${row.zero ? `零互动作品 ${row.zero} / ${row.count} · ${rate(row.zero,row.count)}` : '零互动作品 0 · 0.0%'}</div><button class="account-open" data-open-account="${esc(row.name)}" aria-label="查看${esc(row.name)}的作品">查看作品 <span aria-hidden="true">↗</span></button></article>`;
+    }).join('');
+    $('#account-empty').hidden = rows.length !== 0;
+    $('#account-expand').hidden = !rows.length || rows.length <= 12 || accountState.filter !== 'all' || !!accountState.query.trim();
+    $('#account-expand').textContent = accountState.expanded ? '收起账号' : `展开其余 ${Math.max(0,rows.length-12)} 个账号`;
+    $('#account-reset').hidden = !accountState.owner && !accountState.query && accountState.filter === 'all' && accountState.sort === 'engagement';
+    document.querySelectorAll('[data-account-filter]').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.accountFilter === accountState.filter)));
+  }
+  function resetAccounts() {
+    Object.assign(accountState,{owner:'',query:'',filter:'all',sort:'engagement',expanded:false});
+    $('#account-owner').value = '';
+    $('#account-search').value = '';
+    $('#account-sort').value = 'engagement';
+    renderAccounts();
+  }
+  $('#account-owner').innerHTML = '<option value="">全部负责人</option>' + owners.map(owner => `<option value="${esc(owner)}">${esc(owner)}</option>`).join('');
+  $('#work-owner').innerHTML = $('#account-owner').innerHTML;
+  $('#account-owner').addEventListener('change',event => {accountState.owner=event.target.value;accountState.expanded=false;renderAccounts();});
+  $('#account-search').addEventListener('input',event => {accountState.query=event.target.value;accountState.expanded=false;renderAccounts();});
+  $('#account-sort').addEventListener('change',event => {accountState.sort=event.target.value;renderAccounts();});
+  document.querySelectorAll('[data-account-filter]').forEach(button => button.addEventListener('click',() => {accountState.filter=button.dataset.accountFilter;accountState.expanded=false;renderAccounts();}));
+  $('#account-reset').addEventListener('click',resetAccounts);
+  $('#account-empty-reset').addEventListener('click',resetAccounts);
+  $('#account-expand').addEventListener('click',() => {
+    accountState.expanded=!accountState.expanded;renderAccounts();
+    if (!accountState.expanded) $('#account-performance-title').scrollIntoView({block:'start'});
+  });
+  document.querySelectorAll('[data-owner]').forEach(button => button.addEventListener('click',() => {
+    resetAccounts();accountState.owner=button.dataset.owner;$('#account-owner').value=accountState.owner;renderAccounts();
+    $('#account-performance-title').scrollIntoView({block:'start'});$('#account-owner').focus({preventScroll:true});
+  }));
+
+  function videoLink(work) {
+    return work.video_url ? `<a class="video-link" href="${esc(work.video_url)}" target="_blank" rel="noopener noreferrer">查看原视频 ↗</a>` : '<span class="muted">暂无视频链接</span>';
+  }
+  function openAccount(name, opener) {
+    const rows = works.filter(work => work.account === name && (!accountState.owner || work.owner === accountState.owner));
+    const account = aggregate(rows)[0];
+    if (!account) return;
+    drawerOpener=opener;drawerScroll=window.scrollY;
+    $('#drawer-title').textContent=name;
+    $('#drawer-scope').textContent=`${meta.start.slice(0,10)}${meta.start.slice(0,10) !== meta.end.slice(0,10) ? ` 至 ${meta.end.slice(0,10)}` : ''} · ${accountState.owner ? `${accountState.owner}的作品范围` : '全部作品归属'} · ${rows.length} 个作品`;
+    $('#drawer-summary').innerHTML=[['累计互动',num(account.engagement)],['平均互动',avg(account).toFixed(1)],['零互动作品',`${account.zero} / ${account.count}`]].map(([label,value])=>`<div><span>${label}</span><strong>${value}</strong></div>`).join('');
+    const periods=[];
+    [...rows].sort((a,b)=>a.publish_time.localeCompare(b.publish_time)||a.video_id.localeCompare(b.video_id)).forEach(work=>{
+      const last=periods.at(-1);
+      if(last?.owner===work.owner){last.end=work.publish_time;last.count++;}
+      else periods.push({owner:work.owner,start:work.publish_time,end:work.publish_time,count:1});
+    });
+    $('#drawer-owners').innerHTML=periods.map(period=>`<p><strong>${esc(period.owner)}</strong> · ${esc(period.start)}${period.start===period.end?'':` 至 ${esc(period.end)}`} · ${period.count} 个作品</p>`).join('');
+    $('#drawer-breakdown').innerHTML=[['点赞','digg'],['评论','comment'],['分享','share'],['收藏','collect']].map(([label,key])=>`<div><span>${label}</span><strong>${num(sum(rows,key))}</strong></div>`).join('');
+    $('#drawer-works').innerHTML=rows.map(work=>`<article class="drawer-work"><div class="drawer-work-meta"><time>${esc(work.publish_time)}</time><span>${esc(work.owner)}</span><span class="${work.engagement===0?'warning':'muted'}">${work.engagement===0?'零互动／待排查':'有互动'}</span></div><p>${esc(work.describe || '暂无作品描述')}</p><div class="drawer-work-footer"><span>赞 ${work.digg} · 评 ${work.comment} · 转 ${work.share} · 藏 ${work.collect}</span>${videoLink(work)}</div></article>`).join('');
+    $('#drawer-to-works').onclick=()=>{
+      Object.assign(workState,{account:name,owner:accountState.owner,query:'',filter:'all'});
+      $('#work-search').value='';$('#work-owner').value=workState.owner;renderWorks();
+      drawer.close();
+      requestAnimationFrame(()=>{$('#works-title').scrollIntoView({block:'start'});$('#work-search').focus({preventScroll:true});});
+    };
+    drawer.showModal();document.body.classList.add('dialog-open');$('#drawer-scroll').scrollTop=0;$('#drawer-close').focus();
+  }
+  $('#account-grid').addEventListener('click',event=>{
+    const card=event.target.closest('[data-account]');
+    if(card) openAccount(card.dataset.account,card.querySelector('.account-open'));
+  });
+  $('#drawer-close').addEventListener('click',()=>drawer.close());
+  drawer.addEventListener('keydown',event=>{
+    if(event.key!=='Tab')return;
+    const targets=[...drawer.querySelectorAll('button:not([disabled]),a[href],select,input,[tabindex="0"]')].filter(el=>el.getClientRects().length);
+    const first=targets[0],last=targets.at(-1);
+    if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+    else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+  });
+  drawer.addEventListener('click',event=>{if(event.target===drawer)drawer.close();});
+  drawer.addEventListener('close',()=>{document.body.classList.remove('dialog-open');window.scrollTo(0,drawerScroll);drawerOpener?.focus({preventScroll:true});});
+
+  function renderWorks() {
+    const rows=works.filter(work=>(!workState.owner||work.owner===workState.owner)&&(!workState.account||work.account===workState.account))
+      .filter(work=>workState.filter==='all'||(workState.filter==='zero'?work.engagement===0:work.engagement>0&&work.engagement>=meta.top_threshold))
+      .filter(work=>`${work.owner} ${work.account} ${work.describe}`.toLowerCase().includes(workState.query.trim().toLowerCase()));
+    $('#works-body').innerHTML=rows.map(work=>`<tr><td><span class="pill ${work.engagement===0?'pill-warning':''}">${work.engagement===0?'零互动／待排查':'有互动'}</span></td><td>${esc(work.publish_time.slice(11))}<br><span class="muted">${esc(work.publish_time.slice(0,10))}</span></td><td>${esc(work.owner)}</td><td>${esc(work.account)}</td><td class="desc">${esc(work.describe||'暂无作品描述')}<br>${videoLink(work)}</td><td>赞 ${work.digg} · 评 ${work.comment}<br>转 ${work.share} · 藏 ${work.collect}</td></tr>`).join('');
+    $('#empty').hidden=rows.length!==0;
+    $('#work-scope').textContent=`${workState.owner||'全部负责人'}${workState.account?` · ${workState.account}`:''} · ${rows.length} 个作品`;
+    $('#work-reset').hidden=!workState.owner&&!workState.account&&!workState.query&&workState.filter==='all';
+    document.querySelectorAll('[data-filter]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.filter===workState.filter)));
+  }
+  function resetWorks(){Object.assign(workState,{filter:'all',query:'',owner:'',account:''});$('#work-owner').value='';$('#work-search').value='';renderWorks();}
+  document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{workState.filter=button.dataset.filter;renderWorks();}));
+  $('#work-search').addEventListener('input',event=>{workState.query=event.target.value;renderWorks();});
+  $('#work-owner').addEventListener('change',event=>{workState.owner=event.target.value;renderWorks();});
+  $('#work-reset').addEventListener('click',resetWorks);
+  $('#work-empty-reset').addEventListener('click',resetWorks);
+  $('#review-zero').addEventListener('click',()=>{resetAccounts();accountState.filter='zero';accountState.sort='zero';$('#account-sort').value='zero';renderAccounts();$('#account-performance-title').scrollIntoView({block:'start'});});
+  $('#review-top').addEventListener('click',()=>{resetAccounts();$('#account-performance-title').scrollIntoView({block:'start'});});
+  renderAccounts();renderWorks();
+})();
+</script>
 </body>
 </html>
