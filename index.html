@@ -84,6 +84,22 @@
     .tag { min-height:60px; padding:11px 12px; display:grid; grid-template-columns:1fr auto; align-items:end; gap:8px; position:relative; overflow:hidden; }
     .tag strong { font-size:14px; line-height:1.2; overflow-wrap:anywhere; }
     .tag span { color:#dbeaff; font-weight:900; font-size:16px; }
+    .account-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr)); gap:14px; }
+    .account-card { min-width:0; padding:18px; border:1px solid var(--line); border-radius:var(--radius); background:radial-gradient(ellipse at top right,rgba(79,140,255,.09),transparent 70%),var(--panel); }
+    .account-card-head { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+    .account-card h3 { margin:0; font-size:17px; line-height:1.5; overflow-wrap:anywhere; }
+    .account-work-count { flex-shrink:0; padding:4px 8px; border-radius:6px; background:rgba(79,140,255,.1); color:#dbeaff; font-size:12px; font-weight:700; }
+    .account-owner { margin:8px 0 18px; min-height:36px; color:var(--muted); font-size:12px; line-height:1.5; overflow-wrap:anywhere; }
+    .account-metrics { display:grid; grid-template-columns:1.2fr 1fr; gap:12px; align-items:end; font-variant-numeric:tabular-nums; }
+    .account-metrics span { display:block; margin-bottom:6px; color:var(--muted); font-size:12px; }
+    .account-metrics strong { font-size:38px; line-height:1; letter-spacing:-.04em; }
+    .account-metrics b { font-size:23px; line-height:1; color:var(--soft); }
+    .account-meter { height:4px; margin:16px 0; border-radius:999px; background:#1c2633; overflow:hidden; }
+    .account-meter i { display:block; height:100%; background:linear-gradient(90deg,var(--accent),var(--accent-2)); border-radius:inherit; }
+    .account-rates { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:12px; color:var(--muted); }
+    .account-rates b { color:var(--soft); margin-left:4px; }
+    .account-card-alert { border-color:rgba(235,176,91,.35); }
+    .account-card-alert .account-rates b { color:#ebbc7c; }
     .table-shell { overflow:hidden; }
     .toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; padding:10px 12px; border-bottom:1px solid var(--line); background:rgba(0,0,0,.16); backdrop-filter:blur(10px); }
     .segmented { display:inline-grid; grid-template-columns:repeat(3,minmax(84px,1fr)); border:1px solid var(--line); border-radius:999px; overflow:hidden; background:#090b0f; }
@@ -93,7 +109,7 @@
     .search { width:min(360px,100%); min-height:36px; border:1px solid var(--line); border-radius:999px; background:#090b0f; color:var(--text); padding:0 12px; outline:none; }
     .table-wrap { overflow-x:auto; }
     table { width:100%; min-width:980px; border-collapse:collapse; font-variant-numeric:tabular-nums; }
-    .account-table, .works-table { min-width:760px; }
+    .works-table { min-width:760px; }
     th, td { padding:11px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
     th { position:sticky; top:0; z-index:1; background:#0a0d11; color:var(--muted); font-size:12px; letter-spacing:.02em; white-space:nowrap; }
     tbody tr:hover td { background:rgba(255,255,255,.014); }
@@ -191,41 +207,245 @@
 <article class="count-card"><span>非凡</span><strong>2</strong><em>774 互动 · 未过审 0</em><i style="--value:22;"></i></article></div>
     </section>
     <section class="section" aria-labelledby="account-performance-title">
-      <div class="section-head"><div><h2 id="account-performance-title">账号表现</h2><p class="section-note">与 Markdown 报表保持同一口径，关注作品数、互动、平均互动、零互动率和未过审率。</p></div></div>
-      <div class="table-shell"><div class="table-wrap"><table class="account-table"><thead><tr><th>账号</th><th>负责人区间</th><th>作品</th><th>互动</th><th>平均互动</th><th>零互动率</th><th>未过审率</th></tr></thead><tbody><tr><td>贤哥来了</td><td>非凡 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">549</span></td><td>549.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥丨流量陪跑</td><td>非凡 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">225</span></td><td>225.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥AI获客</td><td>叶开贤 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">75</span></td><td>75.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥私域圈</td><td>廖明才 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">55</span></td><td>55.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥获客思路</td><td>魏才勇 10-22（2条）</td><td><span class="score small">2</span></td><td><span class="score small">43</span></td><td>21.5</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥·短视频获客</td><td>廖明才 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">33</span></td><td>33.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥操盘运营</td><td>王剑辉 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">29</span></td><td>29.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥流量池</td><td>叶开贤 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">29</span></td><td>29.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥—获客</td><td>魏才勇 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">25</span></td><td>25.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥大实话（IP孵化）</td><td>叶开贤 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">24</span></td><td>24.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥私域</td><td>廖明才 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">22</span></td><td>22.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥 | IP陪跑</td><td>邱志权 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">13</span></td><td>13.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥ip打造</td><td>邱志权 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">13</span></td><td>13.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥获客日常</td><td>王剑辉 10-22（2条）</td><td><span class="score small">2</span></td><td><span class="score small">11</span></td><td>5.5</td><td>50.0%</td><td>50.0%</td></tr>
-<tr><td>贤哥讲流量</td><td>邱志权 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">11</span></td><td>11.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥｜流量操盘</td><td>叶开贤 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">10</span></td><td>10.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥操盘手</td><td>王剑辉 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">9</span></td><td>9.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥Ip打造日记</td><td>王剑辉 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">8</span></td><td>8.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥｜IP打造</td><td>叶开贤 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">8</span></td><td>8.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥商业圈</td><td>郑建裕 10-22（1条）；邱志权 10-22（1条）；郑建裕 10-22（1条）</td><td><span class="score small">3</span></td><td><span class="score small">7</span></td><td>2.3</td><td>33.3%</td><td>33.3%</td></tr>
-<tr><td>贤哥别闲/ 流量</td><td>郑建裕 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">7</span></td><td>7.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥运营分享</td><td>郑建裕 10-22（2条）</td><td><span class="score small">2</span></td><td><span class="score small">6</span></td><td>3.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥不闲</td><td>郑建裕 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">6</span></td><td>6.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥获客参谋</td><td>郑建裕 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">6</span></td><td>6.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥丨私域</td><td>郑建裕 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">5</span></td><td>5.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>拍拍-塘燕</td><td>廖明才 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">4</span></td><td>4.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥IP说</td><td>叶开贤 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">4</span></td><td>4.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥实战运营</td><td>邱志权 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">3</span></td><td>3.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥获客分享</td><td>邱志权 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">3</span></td><td>3.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥大实话</td><td>郑建裕 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">1</span></td><td>1.0</td><td>0.0%</td><td>0.0%</td></tr>
-<tr><td>贤哥聊 AI</td><td>廖明才 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">0</span></td><td>0.0</td><td>100.0%</td><td>100.0%</td></tr>
-<tr><td>贤哥获客技巧</td><td>魏才勇 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">0</span></td><td>0.0</td><td>100.0%</td><td>100.0%</td></tr>
-<tr><td>贤哥说AI</td><td>廖明才 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">0</span></td><td>0.0</td><td>100.0%</td><td>100.0%</td></tr>
-<tr><td>贤哥谈获客</td><td>魏才勇 10-22（1条）</td><td><span class="score small">1</span></td><td><span class="score small">0</span></td><td>0.0</td><td>100.0%</td><td>100.0%</td></tr></tbody></table></div></div>
+      <div class="section-head"><div><h2 id="account-performance-title">账号表现</h2><p class="section-note">按累计互动从高到低展示，进度条对比各账号与最高互动账号的表现。</p></div></div>
+      <div class="account-grid"><article class="account-card">
+          <div class="account-card-head"><h3>贤哥来了</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">非凡 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>549</strong></div><div><span>平均互动</span><b>549.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:100.0%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥丨流量陪跑</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">非凡 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>225</strong></div><div><span>平均互动</span><b>225.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:40.98%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥AI获客</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">叶开贤 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>75</strong></div><div><span>平均互动</span><b>75.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:13.66%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥私域圈</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">廖明才 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>55</strong></div><div><span>平均互动</span><b>55.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:10.02%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥获客思路</h3><span class="account-work-count">2 作品</span></div>
+          <p class="account-owner">魏才勇 10-22（2条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>43</strong></div><div><span>平均互动</span><b>21.5</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:7.83%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥·短视频获客</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">廖明才 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>33</strong></div><div><span>平均互动</span><b>33.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:6.01%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥操盘运营</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">王剑辉 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>29</strong></div><div><span>平均互动</span><b>29.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:5.28%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥流量池</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">叶开贤 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>29</strong></div><div><span>平均互动</span><b>29.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:5.28%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥—获客</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">魏才勇 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>25</strong></div><div><span>平均互动</span><b>25.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:4.55%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥大实话（IP孵化）</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">叶开贤 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>24</strong></div><div><span>平均互动</span><b>24.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:4.37%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥私域</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">廖明才 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>22</strong></div><div><span>平均互动</span><b>22.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:4.01%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥 | IP陪跑</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">邱志权 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>13</strong></div><div><span>平均互动</span><b>13.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:2.37%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥ip打造</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">邱志权 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>13</strong></div><div><span>平均互动</span><b>13.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:2.37%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card account-card-alert">
+          <div class="account-card-head"><h3>贤哥获客日常</h3><span class="account-work-count">2 作品</span></div>
+          <p class="account-owner">王剑辉 10-22（2条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>11</strong></div><div><span>平均互动</span><b>5.5</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:2.0%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>50.0%</b></span><span>未过审率 <b>50.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥讲流量</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">邱志权 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>11</strong></div><div><span>平均互动</span><b>11.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:2.0%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥｜流量操盘</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">叶开贤 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>10</strong></div><div><span>平均互动</span><b>10.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:1.82%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥操盘手</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">王剑辉 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>9</strong></div><div><span>平均互动</span><b>9.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:1.64%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥Ip打造日记</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">王剑辉 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>8</strong></div><div><span>平均互动</span><b>8.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:1.46%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥｜IP打造</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">叶开贤 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>8</strong></div><div><span>平均互动</span><b>8.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:1.46%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card account-card-alert">
+          <div class="account-card-head"><h3>贤哥商业圈</h3><span class="account-work-count">3 作品</span></div>
+          <p class="account-owner">郑建裕 10-22（1条）；邱志权 10-22（1条）；郑建裕 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>7</strong></div><div><span>平均互动</span><b>2.3</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:1.28%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>33.3%</b></span><span>未过审率 <b>33.3%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥别闲/ 流量</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">郑建裕 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>7</strong></div><div><span>平均互动</span><b>7.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:1.28%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥运营分享</h3><span class="account-work-count">2 作品</span></div>
+          <p class="account-owner">郑建裕 10-22（2条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>6</strong></div><div><span>平均互动</span><b>3.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:1.09%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥不闲</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">郑建裕 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>6</strong></div><div><span>平均互动</span><b>6.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:1.09%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥获客参谋</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">郑建裕 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>6</strong></div><div><span>平均互动</span><b>6.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:1.09%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥丨私域</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">郑建裕 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>5</strong></div><div><span>平均互动</span><b>5.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:0.91%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>拍拍-塘燕</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">廖明才 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>4</strong></div><div><span>平均互动</span><b>4.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:0.73%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥IP说</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">叶开贤 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>4</strong></div><div><span>平均互动</span><b>4.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:0.73%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥实战运营</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">邱志权 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>3</strong></div><div><span>平均互动</span><b>3.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:0.55%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥获客分享</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">邱志权 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>3</strong></div><div><span>平均互动</span><b>3.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:0.55%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card">
+          <div class="account-card-head"><h3>贤哥大实话</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">郑建裕 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>1</strong></div><div><span>平均互动</span><b>1.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:0.18%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>0.0%</b></span><span>未过审率 <b>0.0%</b></span></div>
+        </article>
+<article class="account-card account-card-alert">
+          <div class="account-card-head"><h3>贤哥聊 AI</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">廖明才 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>0</strong></div><div><span>平均互动</span><b>0.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:0.0%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>100.0%</b></span><span>未过审率 <b>100.0%</b></span></div>
+        </article>
+<article class="account-card account-card-alert">
+          <div class="account-card-head"><h3>贤哥获客技巧</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">魏才勇 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>0</strong></div><div><span>平均互动</span><b>0.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:0.0%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>100.0%</b></span><span>未过审率 <b>100.0%</b></span></div>
+        </article>
+<article class="account-card account-card-alert">
+          <div class="account-card-head"><h3>贤哥说AI</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">廖明才 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>0</strong></div><div><span>平均互动</span><b>0.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:0.0%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>100.0%</b></span><span>未过审率 <b>100.0%</b></span></div>
+        </article>
+<article class="account-card account-card-alert">
+          <div class="account-card-head"><h3>贤哥谈获客</h3><span class="account-work-count">1 作品</span></div>
+          <p class="account-owner">魏才勇 10-22（1条）</p>
+          <div class="account-metrics"><div><span>累计互动</span><strong>0</strong></div><div><span>平均互动</span><b>0.0</b></div></div>
+          <div class="account-meter" aria-hidden="true"><i style="width:0.0%"></i></div>
+          <div class="account-rates"><span>零互动率 <b>100.0%</b></span><span>未过审率 <b>100.0%</b></span></div>
+        </article></div>
     </section>
     <section class="section" aria-labelledby="tags-title">
       <div class="section-head"><div><h2 id="tags-title">高频标签</h2><p class="section-note">标签只保留高频项，适合快速看当天主题倾向。</p></div></div>
