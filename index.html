@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vela 作品监控日报 | 2026-10-22</title>
+  <title>Vela 日报 | 2026-10-22</title>
   <style>
     :root {
       color-scheme: dark;
@@ -32,7 +32,6 @@
     .logo-badge::before { content:""; width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px rgba(79,140,255,.12); }
     .eyebrow { color:var(--muted); font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
     h1 { margin:0; font-size:clamp(30px, 4.6vw, 66px); line-height:.98; letter-spacing:-.04em; font-weight:950; }
-    .hero-copy { margin:0; max-width:760px; color:var(--soft); font-size:15px; line-height:1.65; }
     .hero-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end; }
     .chip { display:inline-flex; align-items:center; gap:7px; min-height:32px; padding:0 10px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.025); color:var(--soft); font-size:12px; font-weight:800; white-space:nowrap; }
     .chip strong { color:#fff; font-weight:900; }
@@ -57,11 +56,6 @@
     .metric::after { content:""; position:absolute; inset:auto 0 0 0; height:3px; background:var(--accent); opacity:.95; }
     .metric strong { display:block; font-size:24px; line-height:1; margin-top:6px; }
     .metric .label { color:var(--muted); font-size:12px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; }
-    .status-stack { display:grid; gap:10px; }
-    .status-card { padding:11px 12px; display:grid; gap:5px; min-height:78px; }
-    .status-card h3 { margin:0; font-size:14px; line-height:1.2; color:var(--muted); }
-    .status-card strong { font-size:19px; line-height:1.05; letter-spacing:-.03em; }
-    .status-card p { margin:0; color:var(--muted); line-height:1.5; font-size:13px; }
     .section { padding:18px 0 0; margin-top:14px; border-top:1px solid var(--line-soft); }
     .section-head { display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:12px; }
     h2 { margin:0; font-size:clamp(20px, 2.6vw, 30px); line-height:1.16; letter-spacing:-.03em; }
@@ -124,9 +118,8 @@
       <div class="brand-row">
         <div class="brand">
           <div class="logo-badge">VELA REPORT</div>
-          <div class="eyebrow">Vela 作品监控日报</div>
-          <h1 id="page-title">Vela 作品监控日报 | 2026-10-22</h1>
-          <p class="hero-copy">这是 Vela API 直连生成的作品监控页面，保留接口校验、核心指标、账号排行和作品明细，并新增未过审判定口径：赞评转藏同时为 0 的视频记为未过审。</p>
+          <div class="eyebrow">Vela 日报</div>
+          <h1 id="page-title">Vela 日报 | 2026-10-22</h1>
         </div>
         <div class="hero-chips" aria-label="数据校验">
           <div class="chip accent"><strong>39</strong> API</div>
@@ -161,11 +154,6 @@
               <div class="panel metric"><span class="label">分享</span><strong>144</strong><small>Top 作品 69</small></div>
               <div class="panel metric"><span class="label">评论</span><strong>177</strong><small>P90 37</small></div>
             </div>
-          </div>
-          <div class="status-stack">
-            <article class="panel status-card"><h3>最佳时段</h3><strong>10:00 </strong><p>4 作品 / 574 互动</p></article>
-            <article class="panel status-card"><h3>最佳负责人</h3><strong>非凡 </strong><p>774 互动 / 2 个账号</p></article>
-            <article class="panel status-card"><h3>最佳账号</h3><strong>贤哥来了 </strong><p>549 互动 / 热门标签 #截流</p></article>
           </div>
         </aside>
       </div>
