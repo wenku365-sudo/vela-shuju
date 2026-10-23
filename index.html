@@ -93,7 +93,7 @@
     .search { width:min(360px,100%); min-height:36px; border:1px solid var(--line); border-radius:999px; background:#090b0f; color:var(--text); padding:0 12px; outline:none; }
     .table-wrap { overflow-x:auto; }
     table { width:100%; min-width:980px; border-collapse:collapse; font-variant-numeric:tabular-nums; }
-    .account-table { min-width:760px; }
+    .account-table, .works-table { min-width:760px; }
     th, td { padding:11px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
     th { position:sticky; top:0; z-index:1; background:#0a0d11; color:var(--muted); font-size:12px; letter-spacing:.02em; white-space:nowrap; }
     tbody tr:hover td { background:rgba(255,255,255,.014); }
@@ -255,11 +255,11 @@
             <button type="button" data-filter="top" aria-pressed="false">高互动</button>
             <button type="button" data-filter="zero" aria-pressed="false">零互动/未过审</button>
           </div>
-          <input class="search" type="search" placeholder="搜索负责人、账号、摘要或视频 ID" aria-label="搜索作品">
+          <input class="search" type="search" placeholder="搜索负责人、账号或描述" aria-label="搜索作品">
         </div>
         <div class="table-wrap">
-          <table>
-            <thead><tr><th>序号</th><th>互动</th><th>审核</th><th>发布时间</th><th>负责人</th><th>账号 / 视频ID</th><th>内容摘要</th><th>描述</th><th>互动构成</th></tr></thead>
+          <table class="works-table">
+            <thead><tr><th>审核</th><th>发布时间</th><th>负责人</th><th>账号</th><th>描述</th><th>互动构成</th></tr></thead>
             <tbody id="works-body"></tbody>
           </table>
           <div class="empty" id="empty">没有匹配到作品</div>
@@ -278,8 +278,8 @@
     const search = document.querySelector(".search");
     function escapeHtml(value) { return String(value).replace(/[&<>"']/g, char => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;" })[char]); }
     function matchesFilter(work) { if (state.filter === "top") return work.engagement >= 23; if (state.filter === "zero") return work.unapproved; return true; }
-    function matchesQuery(work) { if (!state.query) return true; return `${work.owner} ${work.account} ${work.video_id} ${work.content_summary} ${work.describe}`.toLowerCase().includes(state.query); }
-    function renderWorks() { const rows = works.filter(work => matchesFilter(work) && matchesQuery(work)); tbody.innerHTML = rows.map((work, index) => `<tr><td><span class="pill">#${index + 1}</span></td><td><span class="score">${work.engagement}</span></td><td><span class="pill">${escapeHtml(work.review_status)}</span></td><td>${escapeHtml(work.publish_time.slice(11))}<br><span class="muted">${escapeHtml(work.publish_time.slice(0,10))}</span></td><td>${escapeHtml(work.owner)}</td><td>${escapeHtml(work.account)}<br><span class="muted">${escapeHtml(work.video_id)}</span></td><td class="desc">${escapeHtml(work.content_summary)}</td><td class="desc">${escapeHtml(work.describe)}</td><td>赞 ${work.digg} · 评 ${work.comment}<br>转 ${work.share} · 藏 ${work.collect}</td></tr>`).join(""); empty.style.display = rows.length ? "none" : "block"; }
+    function matchesQuery(work) { if (!state.query) return true; return `${work.owner} ${work.account} ${work.describe}`.toLowerCase().includes(state.query); }
+    function renderWorks() { const rows = works.filter(work => matchesFilter(work) && matchesQuery(work)); tbody.innerHTML = rows.map(work => `<tr><td><span class="pill">${escapeHtml(work.review_status)}</span></td><td>${escapeHtml(work.publish_time.slice(11))}<br><span class="muted">${escapeHtml(work.publish_time.slice(0,10))}</span></td><td>${escapeHtml(work.owner)}</td><td>${escapeHtml(work.account)}</td><td class="desc">${escapeHtml(work.describe)}</td><td>赞 ${work.digg} · 评 ${work.comment}<br>转 ${work.share} · 藏 ${work.collect}</td></tr>`).join(""); empty.style.display = rows.length ? "none" : "block"; }
     buttons.forEach(button => button.addEventListener("click", () => { state.filter = button.dataset.filter; buttons.forEach(item => item.setAttribute("aria-pressed", item === button ? "true" : "false")); renderWorks(); }));
     search.addEventListener("input", event => { state.query = event.target.value.trim().toLowerCase(); renderWorks(); });
     renderWorks();
