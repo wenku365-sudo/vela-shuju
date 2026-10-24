@@ -149,19 +149,24 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,su
 .account-tabs button[aria-pressed=true] { background:rgba(79,140,255,.15);border-color:var(--accent);color:#e8f0ff; }
 .scope-row { display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0;color:var(--muted);font-size:13px;line-height:1.6;flex-wrap:wrap; }
 .scope-row p { margin:0; }
-.account-grid { grid-template-columns:repeat(3,minmax(0,1fr));gap:16px; }
-.account-card { padding:20px;background:linear-gradient(150deg,rgba(79,140,255,.055),transparent 65%),var(--panel);display:flex;flex-direction:column;cursor:pointer;transition:border-color .15s; }
+.account-grid { grid-template-columns:repeat(3,minmax(0,1fr));gap:12px; }
+.account-card { padding:14px 16px;background:linear-gradient(150deg,rgba(79,140,255,.055),transparent 65%),var(--panel);display:flex;flex-direction:column;cursor:pointer;transition:border-color .15s; }
 .account-card:hover,.account-card:focus-within { border-color:#4d6b99; }
-.account-card-head { min-height:28px; }
-.account-owner { margin:8px 0 22px;min-height:18px; }
-.account-primary span { display:block;font-size:12px;color:var(--muted);margin-bottom:7px; }
-.account-primary strong { font-size:40px;letter-spacing:-.04em;line-height:1.15;font-variant-numeric:tabular-nums; }
-.account-secondary { display:flex;gap:5px 16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:10px 0 18px;line-height:1.6; }
-.account-health { margin-top:auto;padding-top:14px;border-top:1px solid var(--line-soft);font-size:12px;color:var(--muted); }
+.account-card-head { min-height:23px; }
+.account-card h3 { font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+.account-owner { display:flex;justify-content:space-between;align-items:center;gap:8px;margin:4px 0 10px;min-height:18px; }
+.account-owner-label { min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis; }
+.account-work-count { padding:0;background:transparent;color:var(--muted);font-weight:400; }
+.account-primary { display:flex;align-items:baseline;gap:10px; }
+.account-primary span { font-size:12px;color:var(--muted); }
+.account-primary strong { font-size:28px;letter-spacing:-.03em;line-height:1.15;font-variant-numeric:tabular-nums; }
+.account-secondary { display:flex;gap:2px 12px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:5px 0 0;line-height:1.6; }
+.account-card-footer { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0 8px;margin-top:9px;padding-top:6px;border-top:1px solid var(--line-soft); }
+.account-health { font-size:11px;color:var(--muted);line-height:1.6; }
 .has-zero,.warning { color:#efbf7a; }
-.account-open { display:flex;align-items:center;justify-content:space-between;width:100%;border:0;background:transparent;color:#9fc2ff;margin-top:14px;padding:7px 0 0;font-size:13px;text-align:left; }
+.account-open { display:flex;align-items:center;gap:6px;min-height:32px;flex-shrink:0;border:0;background:transparent;color:#9fc2ff;margin:0;padding:0;font-size:12px;text-align:left; }
 .account-open:hover { color:white; }
-.account-open span { font-size:18px; }
+.account-open span { font-size:15px; }
 .expand-wrap { text-align:center;margin-top:20px; }
 .empty-state { text-align:center;border:1px dashed var(--line);border-radius:12px;padding:40px 20px;color:var(--muted);line-height:1.7; }
 .empty-state strong { display:block;color:var(--text);font-size:17px; }
@@ -215,8 +220,9 @@ dialog::backdrop { background:rgba(0,0,0,.65);backdrop-filter:blur(3px); }
 .drawer-footer button { width:100%; }
 .no-script { border:1px solid #efbf7a;padding:16px;color:#efbf7a; }
 @media(min-width:681px) and (max-width:1060px) { .account-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.action-band {grid-template-columns:1fr;}.insight-grid {grid-template-columns:repeat(3,minmax(0,1fr));} }
+@media(min-width:1280px) { .account-grid {grid-template-columns:repeat(4,minmax(0,1fr));} }
 @media(max-width:680px) {
- .account-grid {grid-template-columns:1fr;gap:12px;}.account-card {padding:18px;}.account-primary strong {font-size:36px;}
+ .account-grid {grid-template-columns:1fr;gap:10px;}.account-card {padding:12px 14px;}.account-primary strong {font-size:26px;}.account-open {min-height:44px;}.account-card-footer {margin-top:7px;padding-top:3px;}
  .account-summary {grid-template-columns:repeat(2,minmax(0,1fr));}.account-summary>div {padding:14px;}.account-summary strong {font-size:25px;}
  .account-controls {display:grid;grid-template-columns:1fr 1fr;width:100%;}.control-search {grid-column:1/-1;min-width:0;grid-row:1;}.control select,.control input {min-width:0;width:100%;font-size:16px;}
  .account-tabs {width:100%;}.account-tabs button {padding:10px;font-size:12px;flex:1;}.account-filter-row {gap:10px;}.insight-grid {grid-template-columns:1fr;}
@@ -412,9 +418,9 @@ dialog::backdrop { background:rgba(0,0,0,.65);backdrop-filter:blur(3px); }
     $('#account-grid').innerHTML = visible.map(row => {
       const label = {engagement:'累计互动',average:'平均互动',count:'作品数',zero:'零互动作品'}[accountState.sort];
       const value = {engagement:num(row.engagement),average:avg(row).toFixed(1),count:num(row.count),zero:`${row.zero} / ${row.count}`}[accountState.sort];
-      const secondary = accountState.sort === 'engagement' ? `贡献当日总互动 ${rate(row.engagement,wholeEngagement)}` : `累计互动 ${num(row.engagement)} · ${row.count} 个作品`;
+      const secondary = accountState.sort === 'engagement' ? `当日互动贡献 ${rate(row.engagement,wholeEngagement)}` : `累计互动 ${num(row.engagement)}`;
       const average = row.count > 1 && accountState.sort !== 'average' ? `<span>平均互动 ${avg(row).toFixed(1)}</span>` : '';
-      return `<article class="account-card" data-account="${esc(row.name)}"><div class="account-card-head"><h3>${esc(row.name)}</h3><span class="account-work-count">${row.count} 作品</span></div><p class="account-owner">${esc(ownerLabel(row))}</p><div class="account-primary"><span>${label}</span><strong>${value}</strong></div><div class="account-secondary"><span>${secondary}</span>${average}</div><div class="account-health ${row.zero ? 'has-zero' : ''}">${row.zero ? `零互动作品 ${row.zero} / ${row.count} · ${rate(row.zero,row.count)}` : '零互动作品 0 · 0.0%'}</div><button class="account-open" data-open-account="${esc(row.name)}" aria-label="查看${esc(row.name)}的作品">查看作品 <span aria-hidden="true">↗</span></button></article>`;
+      return `<article class="account-card" data-account="${esc(row.name)}"><div class="account-card-head"><h3 title="${esc(row.name)}">${esc(row.name)}</h3></div><p class="account-owner"><span class="account-owner-label" title="${esc(ownerLabel(row))}">${esc(ownerLabel(row))}</span><span class="account-work-count">${row.count} 作品</span></p><div class="account-primary"><strong>${value}</strong><span>${label}</span></div><div class="account-secondary"><span>${secondary}</span>${average}</div><div class="account-card-footer"><div class="account-health ${row.zero ? 'has-zero' : ''}">${row.zero ? `零互动 ${row.zero} / ${row.count} · ${rate(row.zero,row.count)}` : '零互动 0'}</div><button class="account-open" data-open-account="${esc(row.name)}" aria-label="查看${esc(row.name)}的作品">查看作品 <span aria-hidden="true">↗</span></button></div></article>`;
     }).join('');
     $('#account-empty').hidden = rows.length !== 0;
     $('#account-expand').hidden = !rows.length || rows.length <= 12 || accountState.filter !== 'all' || !!accountState.query.trim();
